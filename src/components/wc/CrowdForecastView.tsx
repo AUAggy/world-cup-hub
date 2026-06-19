@@ -7,6 +7,7 @@ import type {
   TeamMatchSignal,
 } from "@/lib/forecast-types";
 import { cn } from "@/lib/utils";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface Props {
   query: UseQueryResult<ForecastSnapshot, Error>;
@@ -40,68 +41,71 @@ export function CrowdForecastView({ query }: Props) {
   if (!data) return <ForecastLoading />;
 
   return (
-    <div className="space-y-8">
-      <header className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-4">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold">
-            Crowd Forecast
-          </p>
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight mt-1">
-            Public market signal, kept separate
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm text-ink-soft">
-            Polymarket tournament futures and Kalshi group-stage match markets answer different
-            questions. They are shown separately for education and curiosity only.
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={() => query.refetch()}
-          disabled={query.isFetching}
-          className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium transition-colors hover:border-ink/25 disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          {query.isFetching ? "Checking..." : "Refresh"}
-        </button>
-      </header>
+    <TooltipProvider delayDuration={120}>
+      <div className="space-y-7">
+        <header className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold">
+              Crowd Forecast
+            </p>
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight mt-1">
+              Public market signal, kept separate
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-ink-soft">
+              Polymarket tournament futures and Kalshi group-stage match markets answer different
+              questions. They are shown separately for education and curiosity only.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => query.refetch()}
+            disabled={query.isFetching}
+            className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium transition-colors hover:border-ink/25 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {query.isFetching ? "Checking..." : "Refresh"}
+          </button>
+        </header>
 
-      <SourceStatusStrip snapshot={data} />
+        <SourceStatusStrip snapshot={data} />
+        <ReadingGuide />
 
-      <section>
-        <SectionHeader
-          kicker="Tournament Pulse"
-          title="Who the market thinks can win it all"
-          note={`Top ${data.topTournamentSignals.length} Polymarket tournament signals`}
-        />
-        <TournamentPulse teams={data.topTournamentSignals} />
-      </section>
+        <section>
+          <SectionHeader
+            kicker="Tournament Pulse"
+            title="Who the market thinks can win it all"
+            note={`Top ${data.topTournamentSignals.length} Polymarket tournament signals`}
+          />
+          <TournamentPulse teams={data.topTournamentSignals} />
+        </section>
 
-      <section>
-        <SectionHeader
-          kicker="Movement"
-          title="Teams that shifted in the last day"
-          note="Shown when movement is greater than 0.5 percentage points"
-        />
-        <Movers teams={data.movers} />
-      </section>
+        <section>
+          <SectionHeader
+            kicker="Movement"
+            title="24h movement"
+            note="Quiet list of teams that moved more than 0.5 percentage points"
+          />
+          <Movers teams={data.movers} />
+        </section>
 
-      <section>
-        <SectionHeader
-          kicker="Group Forecast"
-          title="All groups, without replacing standings"
-          note="Official tables stay in Groups. These are public market signals."
-        />
-        <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {data.groupForecasts.map((group) => (
-            <GroupForecastCard key={group.group} group={group.group} teams={group.teams} />
-          ))}
-        </div>
-      </section>
+        <section>
+          <SectionHeader
+            kicker="Group Forecast"
+            title="All groups, without replacing standings"
+            note="Official tables stay in Groups. These are public market signals."
+          />
+          <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {data.groupForecasts.map((group) => (
+              <GroupForecastCard key={group.group} group={group.group} teams={group.teams} />
+            ))}
+          </div>
+        </section>
 
-      <p className="rounded-xl border border-dashed border-border bg-paper-deep/40 px-4 py-3 text-xs leading-relaxed text-ink-soft">
-        For education and curiosity only. This is not betting, trading, financial, or investment
-        advice. Unofficial fan site. Not affiliated with FIFA, ESPN, Polymarket, or Kalshi.
-      </p>
-    </div>
+        <p className="rounded-xl border border-dashed border-border bg-paper-deep/40 px-4 py-3 text-xs leading-relaxed text-ink-soft">
+          For education and curiosity only. This is not betting, trading, financial, or investment
+          advice. Unofficial fan site. Not affiliated with FIFA, ESPN, Polymarket, or Kalshi.
+        </p>
+      </div>
+    </TooltipProvider>
   );
 }
 
@@ -156,6 +160,52 @@ function SourceStatusCard({ label, status }: { label: string; status: ForecastSo
         {status.updatedAt ? formatSnapshotDateTime(status.updatedAt) : "No confirmed data"}
       </p>
       {status.message && <p className="mt-0.5 text-xs text-ink-soft">{status.message}</p>}
+    </div>
+  );
+}
+
+function ReadingGuide() {
+  return (
+    <section className="rounded-xl border border-border bg-card">
+      <header className="border-b border-border bg-paper-deep/30 px-4 py-3">
+        <p className="text-[11px] uppercase tracking-wider text-terracotta font-semibold">
+          How to read this dashboard
+        </p>
+      </header>
+      <div className="grid gap-0 divide-y divide-border/60 text-sm sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+        <GuideItem
+          label="Tournament"
+          swatch="bg-[oklch(0.5_0.12_250)]"
+          text="Polymarket signal for winning the whole World Cup."
+        />
+        <GuideItem
+          label="Match"
+          swatch="bg-pitch"
+          text="Kalshi signal across listed group-stage matches."
+        />
+        <GuideItem
+          label="Pills"
+          swatch="bg-paper-deep"
+          text="Opponent chips. Percentages are open markets. WIN, LOSS, and DRAW are settled."
+        />
+        <GuideItem
+          label="N/A"
+          swatch="bg-border"
+          text="No public market signal is available from that source."
+        />
+      </div>
+    </section>
+  );
+}
+
+function GuideItem({ label, swatch, text }: { label: string; swatch: string; text: string }) {
+  return (
+    <div className="flex gap-3 px-4 py-3">
+      <span className={cn("mt-1 size-2.5 shrink-0 rounded-full", swatch)} aria-hidden />
+      <div>
+        <p className="font-medium">{label}</p>
+        <p className="mt-0.5 text-xs leading-relaxed text-ink-soft">{text}</p>
+      </div>
     </div>
   );
 }
@@ -220,26 +270,22 @@ function Movers({ teams }: { teams: ForecastSnapshot["movers"] }) {
   if (teams.length === 0) return <EmptyForecast text="No major movement in the last 24 hours." />;
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="overflow-hidden rounded-xl border border-border bg-card">
       {teams.slice(0, 9).map((team) => (
-        <div key={team.team} className="rounded-xl border border-border bg-card px-4 py-3">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <p className="truncate font-medium">{team.team}</p>
-              <p className="text-xs text-ink-soft">Group {team.group}</p>
-            </div>
-            <span
-              className={cn("font-display text-lg tabular-nums", movementClass(team.movement24h))}
-            >
-              {fmtMovement(team.movement24h)}
-            </span>
+        <div
+          key={team.team}
+          className="grid grid-cols-[1fr_5rem_5rem] items-center gap-2 border-b border-border/60 px-3 py-2 text-sm last:border-b-0"
+        >
+          <div className="min-w-0">
+            <p className="truncate font-medium">{team.team}</p>
+            <p className="text-xs text-ink-soft">Group {team.group}</p>
           </div>
-          <div className="mt-3 h-1.5 rounded-full bg-paper-deep">
-            <div
-              className="h-full rounded-full bg-terracotta"
-              style={{ width: `${Math.min(100, Math.abs(team.movement24h) * 4000)}%` }}
-            />
-          </div>
+          <span className="text-right text-xs text-ink-soft tabular-nums">
+            {fmtPct(team.probability)}
+          </span>
+          <span className={cn("text-right text-xs tabular-nums", movementClass(team.movement24h))}>
+            {fmtMovement(team.movement24h)}
+          </span>
         </div>
       ))}
     </div>
@@ -264,18 +310,28 @@ function GroupForecastCard({ group, teams }: { group: string; teams: TeamForecas
 
 function TeamForecastRow({ team }: { team: TeamForecast }) {
   return (
-    <div className="px-3 py-2.5">
+    <div className="px-3 py-3">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="truncate text-sm font-medium">{team.team}</p>
-          <p className="mt-0.5 text-xs text-ink-soft">
-            Tournament {fmtPct(team.tournament.probability)} · Match{" "}
-            {fmtPct(team.matchAverageProbability)}
-          </p>
         </div>
         <span className={cn("text-xs tabular-nums", movementClass(team.tournament.movement24h))}>
           {fmtMovement(team.tournament.movement24h)}
         </span>
+      </div>
+      <div className="mt-2 space-y-1.5">
+        <SignalBar
+          label="Tournament"
+          value={team.tournament.probability}
+          colorClass="bg-[oklch(0.5_0.12_250)]"
+          help="Polymarket tournament-winner signal."
+        />
+        <SignalBar
+          label="Match"
+          value={team.matchAverageProbability}
+          colorClass="bg-pitch"
+          help="Average Kalshi signal across listed group-stage match markets."
+        />
       </div>
       {team.matchSignals.length > 0 && (
         <div className="mt-2 flex flex-wrap gap-1.5">
@@ -291,20 +347,68 @@ function TeamForecastRow({ team }: { team: TeamForecast }) {
   );
 }
 
+function SignalBar({
+  label,
+  value,
+  colorClass,
+  help,
+}: {
+  label: string;
+  value: number | null;
+  colorClass: string;
+  help: string;
+}) {
+  return (
+    <div className="grid grid-cols-[4.75rem_1fr_3.25rem] items-center gap-2">
+      <MetricLabel label={label} help={help} />
+      <div className="h-1.5 overflow-hidden rounded-full bg-paper-deep" aria-hidden>
+        {value !== null && (
+          <div
+            className={cn("h-full rounded-full", colorClass)}
+            style={{ width: fmtWidth(value) }}
+          />
+        )}
+      </div>
+      <span className="text-right text-[11px] tabular-nums text-ink-soft">{fmtPct(value)}</span>
+    </div>
+  );
+}
+
+function MetricLabel({ label, help }: { label: string; help: string }) {
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <button
+          type="button"
+          className="text-left text-[11px] text-ink-soft underline decoration-dotted decoration-ink-soft/40 underline-offset-4 hover:decoration-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          aria-label={`${label}: ${help}`}
+        >
+          {label}
+        </button>
+      </TooltipTrigger>
+      <TooltipContent side="top" className="max-w-56 text-xs">
+        {help}
+      </TooltipContent>
+    </Tooltip>
+  );
+}
+
 function MatchSignalChip({ signal }: { signal: TeamMatchSignal }) {
   const settled = signal.result !== null;
+  const result = signal.result?.toUpperCase();
   return (
     <span
       className={cn(
-        "inline-flex max-w-full items-center gap-1 rounded-full border border-border bg-paper px-2 py-0.5 text-[11px]",
-        settled && "bg-paper-deep/70",
+        "inline-flex max-w-full items-center gap-1 rounded-full border px-2 py-0.5 text-[11px]",
+        !settled && "border-pitch/25 bg-pitch/10",
+        signal.result === "win" && "border-pitch/30 bg-pitch/10 text-pitch",
+        signal.result === "loss" && "border-terracotta/30 bg-terracotta-soft/35 text-terracotta",
+        signal.result === "draw" && "border-ink-soft/25 bg-paper-deep text-ink-soft",
       )}
       title={signal.opponent}
     >
       <span className="truncate">{signal.opponent}</span>
-      <span className="font-mono text-ink-soft">
-        {settled ? signal.result?.toUpperCase() : fmtPct(signal.winProbability)}
-      </span>
+      <span className="font-mono">{settled ? result : fmtPct(signal.winProbability)}</span>
     </span>
   );
 }
@@ -333,6 +437,10 @@ function fmtVolume(value: number | null): string {
   if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1)}M`;
   if (value >= 1_000) return `$${(value / 1_000).toFixed(1)}k`;
   return `$${value.toFixed(0)}`;
+}
+
+function fmtWidth(value: number): string {
+  return `${Math.max(2, Math.min(100, value * 100))}%`;
 }
 
 function movementClass(value: number | null): string {
