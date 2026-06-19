@@ -1,8 +1,29 @@
+import { useEffect, useMemo } from "react";
 import { formatMatchDay, utcDateKey } from "@/lib/date-format";
 import type { Match } from "@/lib/worldcup-types";
 import { MatchCard } from "./MatchCard";
 
-export function MatchesView({ matches }: { matches: Match[] }) {
+interface Props {
+  matches: Match[];
+  autoScrollToCurrent?: boolean;
+}
+
+export function MatchesView({ matches, autoScrollToCurrent = false }: Props) {
+  const targetMatch = useMemo(() => pickCurrentMatch(matches), [matches]);
+
+  useEffect(() => {
+    if (!autoScrollToCurrent || !targetMatch) return;
+    if (!window.matchMedia("(max-width: 640px)").matches) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      document
+        .getElementById(matchAnchorId(targetMatch.id))
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [autoScrollToCurrent, targetMatch]);
+
   if (matches.length === 0) {
     return <p className="text-ink-soft italic">No matches available.</p>;
   }
@@ -26,11 +47,34 @@ export function MatchesView({ matches }: { matches: Match[] }) {
           </header>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {matches.map((m) => (
-              <MatchCard key={m.id} match={m} />
+              <div key={m.id} id={matchAnchorId(m.id)} className="scroll-mt-20">
+                <MatchCard match={m} />
+              </div>
             ))}
           </div>
         </section>
       ))}
     </div>
   );
+}
+
+function pickCurrentMatch(matches: Match[]): Match | null {
+  const live = matches
+    .filter((match) => match.status === "in")
+    .sort((a, b) => a.date.localeCompare(b.date));
+  if (live[0]) return live[0];
+
+  const completed = matches
+    .filter((match) => match.status === "post")
+    .sort((a, b) => b.date.localeCompare(a.date));
+  if (completed[0]) return completed[0];
+
+  const upcoming = matches
+    .filter((match) => match.status === "pre")
+    .sort((a, b) => a.date.localeCompare(b.date));
+  return upcoming[0] ?? matches[0] ?? null;
+}
+
+function matchAnchorId(id: string): string {
+  return `match-${id.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
 }

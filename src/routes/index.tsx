@@ -31,17 +31,17 @@ const forecastQueryOptions = queryOptions({
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FIFA World Cup 2026 — Bracket, Groups & Live Standings" },
+      { title: "World Cup Hub - Bracket, Matches & Crowd Forecast" },
       {
         name: "description",
         content:
-          "An unofficial fan dashboard for the 2026 FIFA World Cup. See the full bracket at a glance, group standings A–L, and every match — updated every 30 minutes.",
+          "Unofficial 2026 FIFA World Cup dashboard with bracket, groups, matches, live status, and an optional Crowd Forecast layer for public market expectations.",
       },
-      { property: "og:title", content: "FIFA World Cup 2026 — Bracket, Groups & Live Standings" },
+      { property: "og:title", content: "World Cup Hub - Bracket, Matches & Crowd Forecast" },
       {
         property: "og:description",
         content:
-          "Unofficial bracket-first fan dashboard for the 2026 FIFA World Cup. Standings for all 12 groups with tooltips, full knockout tree, and every fixture.",
+          "Track the 2026 World Cup bracket, groups, fixtures, live match status, and public market expectations in one lightweight fan dashboard.",
       },
     ],
   }),
@@ -137,9 +137,12 @@ function Dashboard() {
                 Data
               </p>
               <div className="text-sm">
-                <p className="font-medium">ESPN public feed</p>
+                <p className="font-medium">Scores: ESPN public feed</p>
                 <p className="text-ink-soft text-xs mt-0.5">
-                  Snapshot {formatSnapshotDateTime(data.fetchedAt)} · cached for 30 min
+                  Snapshot {formatSnapshotDateTime(data.fetchedAt)} · refreshes every 30 min
+                </p>
+                <p className="text-ink-soft text-xs mt-0.5">
+                  Forecast markets load on demand · refresh every 5 min
                 </p>
               </div>
             </div>
@@ -184,7 +187,7 @@ function Dashboard() {
             <GroupsView groups={data.groups} />
           </TabsContent>
           <TabsContent value="matches" className="mt-6">
-            <MatchesView matches={data.matches} />
+            <MatchesView matches={data.matches} autoScrollToCurrent={tab === "matches"} />
           </TabsContent>
           <TabsContent value="forecast" className="mt-6">
             <CrowdForecastView query={forecastQuery} />
@@ -193,10 +196,21 @@ function Dashboard() {
 
         <footer className="mt-12 pt-6 border-t border-border text-xs text-ink-soft flex flex-wrap justify-between gap-2">
           <p>
-            Snapshot generated {formatSnapshotDateTime(data.fetchedAt)}. Data source: ESPN public
-            scoreboard. Unofficial fan site — not affiliated with FIFA or ESPN.
+            Unofficial World Cup fan dashboard. Not affiliated with FIFA, ESPN, Polymarket, or
+            Kalshi.
           </p>
-          <p>Designed for fans and casual observers alike.</p>
+          <p>
+            Made by{" "}
+            <a
+              href="https://miaggy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-ink underline decoration-dotted underline-offset-4 hover:text-terracotta"
+            >
+              miaggy.com
+            </a>
+            .
+          </p>
         </footer>
       </div>
     </div>
