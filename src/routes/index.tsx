@@ -1,16 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
+import { queryOptions, useQuery, useSuspenseQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { formatSnapshotDateTime } from "@/lib/date-format";
+import { getForecast } from "@/lib/forecast.functions";
 import { getWorldCup } from "@/lib/worldcup.functions";
 import type { Match } from "@/lib/worldcup-types";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { BracketView } from "@/components/wc/BracketView";
+import { CrowdForecastView } from "@/components/wc/CrowdForecastView";
 import { GroupsView } from "@/components/wc/GroupsView";
 import { MatchesView } from "@/components/wc/MatchesView";
 import { MatchCard } from "@/components/wc/MatchCard";
 
 const CLIENT_REFRESH_MS = 30 * 60 * 1000;
+const FORECAST_REFRESH_MS = 5 * 60 * 1000;
 
 const worldCupQuery = queryOptions({
   queryKey: ["worldcup"],
@@ -19,20 +22,26 @@ const worldCupQuery = queryOptions({
   refetchInterval: CLIENT_REFRESH_MS,
 });
 
+const forecastQueryOptions = queryOptions({
+  queryKey: ["forecast"],
+  queryFn: () => getForecast(),
+  staleTime: FORECAST_REFRESH_MS,
+});
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FIFA World Cup 2026 — Bracket, Groups & Live Standings" },
+      { title: "World Cup Hub - Bracket, Matches & Crowd Forecast" },
       {
         name: "description",
         content:
-          "An unofficial fan dashboard for the 2026 FIFA World Cup. See the full bracket at a glance, group standings A–L, and every match — updated every 30 minutes.",
+          "Unofficial 2026 FIFA World Cup dashboard with bracket, groups, matches, live status, and an optional Crowd Forecast layer for public market expectations.",
       },
-      { property: "og:title", content: "FIFA World Cup 2026 — Bracket, Groups & Live Standings" },
+      { property: "og:title", content: "World Cup Hub - Bracket, Matches & Crowd Forecast" },
       {
         property: "og:description",
         content:
-          "Unofficial bracket-first fan dashboard for the 2026 FIFA World Cup. Standings for all 12 groups with tooltips, full knockout tree, and every fixture.",
+          "Track the 2026 World Cup bracket, groups, fixtures, live match status, and public market expectations in one lightweight fan dashboard.",
       },
     ],
   }),
@@ -68,7 +77,12 @@ function pickFeatured(
 
 function Dashboard() {
   const { data } = useSuspenseQuery(worldCupQuery);
-  const [tab, setTab] = useState<"bracket" | "groups" | "matches">("bracket");
+  const [tab, setTab] = useState<"bracket" | "groups" | "matches" | "forecast">("bracket");
+  const forecastQuery = useQuery({
+    ...forecastQueryOptions,
+    enabled: tab === "forecast",
+    refetchInterval: tab === "forecast" ? FORECAST_REFRESH_MS : false,
+  });
 
   const fetchedAt = new Date(data.fetchedAt).getTime();
   const featured = useMemo(() => pickFeatured(data.matches, fetchedAt), [data.matches, fetchedAt]);
@@ -123,9 +137,12 @@ function Dashboard() {
                 Data
               </p>
               <div className="text-sm">
-                <p className="font-medium">ESPN public feed</p>
+                <p className="font-medium">Scores: ESPN public feed</p>
                 <p className="text-ink-soft text-xs mt-0.5">
-                  Snapshot {formatSnapshotDateTime(data.fetchedAt)} · cached for 30 min
+                  Snapshot {formatSnapshotDateTime(data.fetchedAt)} · refreshes every 30 min
+                </p>
+                <p className="text-ink-soft text-xs mt-0.5">
+                  Forecast markets load on demand · refresh every 5 min
                 </p>
               </div>
             </div>
@@ -134,26 +151,34 @@ function Dashboard() {
 
         {/* Tabs */}
         <Tabs value={tab} onValueChange={(v) => setTab(v as typeof tab)} className="mt-8">
-          <TabsList className="bg-paper-deep/60 p-1 rounded-full">
-            <TabsTrigger
-              value="bracket"
-              className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
-            >
-              Bracket
-            </TabsTrigger>
-            <TabsTrigger
-              value="groups"
-              className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
-            >
-              Groups · A–L
-            </TabsTrigger>
-            <TabsTrigger
-              value="matches"
-              className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
-            >
-              All matches
-            </TabsTrigger>
-          </TabsList>
+          <div className="-mx-4 overflow-x-auto px-4 pb-1">
+            <TabsList className="bg-paper-deep/60 p-1 rounded-full">
+              <TabsTrigger
+                value="bracket"
+                className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
+              >
+                Bracket
+              </TabsTrigger>
+              <TabsTrigger
+                value="groups"
+                className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
+              >
+                Groups · A–L
+              </TabsTrigger>
+              <TabsTrigger
+                value="matches"
+                className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
+              >
+                All matches
+              </TabsTrigger>
+              <TabsTrigger
+                value="forecast"
+                className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
+              >
+                Crowd Forecast
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
           <TabsContent value="bracket" className="mt-6">
             <BracketView snapshot={data} />
@@ -162,16 +187,30 @@ function Dashboard() {
             <GroupsView groups={data.groups} />
           </TabsContent>
           <TabsContent value="matches" className="mt-6">
-            <MatchesView matches={data.matches} />
+            <MatchesView matches={data.matches} autoScrollToCurrent={tab === "matches"} />
+          </TabsContent>
+          <TabsContent value="forecast" className="mt-6">
+            <CrowdForecastView query={forecastQuery} />
           </TabsContent>
         </Tabs>
 
         <footer className="mt-12 pt-6 border-t border-border text-xs text-ink-soft flex flex-wrap justify-between gap-2">
           <p>
-            Snapshot generated {formatSnapshotDateTime(data.fetchedAt)}. Data source: ESPN public
-            scoreboard. Unofficial fan site — not affiliated with FIFA or ESPN.
+            Unofficial World Cup fan dashboard. Not affiliated with FIFA, ESPN, Polymarket, or
+            Kalshi.
           </p>
-          <p>Designed for fans and casual observers alike.</p>
+          <p>
+            Made by{" "}
+            <a
+              href="https://miaggy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-ink underline decoration-dotted underline-offset-4 hover:text-terracotta"
+            >
+              miaggy.com
+            </a>
+            .
+          </p>
         </footer>
       </div>
     </div>
