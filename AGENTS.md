@@ -12,6 +12,7 @@ Stack: TanStack Start, React 19, Vite 8, TypeScript, Tailwind CSS 4, Bun, Cloudf
 2. `bun install --frozen-lockfile && bun run verify && bun audit` — all must pass.
 3. Read `plans/world-cup-dashboard-hardening-and-cloudflare.md` for completed phase details.
 4. If resuming the Crowd Forecast work, switch to `feat/crowd-forecast-layer` and read `plans/crowd-forecast-enhancement-prd.md`.
+5. For the next Crowd Forecast UI pass, read `plans/crowd-forecast-ui-ux-quick-wins.md`.
 
 ## Verification
 
@@ -72,8 +73,15 @@ Current status:
 - `checkpoint/crowd-forecast-0` committed as `8ceea9f`.
 - `checkpoint/crowd-forecast-1` committed as `aafea49`: added forecast DTOs, provider fetchers, schema parsing, normalization, transform logic, server function, cache, and 11 forecast tests.
 - `checkpoint/crowd-forecast-2` committed as `368631c`: added the `Crowd Forecast` tab, lazy TanStack Query fetch, compact source status strip, tournament pulse, movers, group forecast cards, degraded states, and responsive tab overflow.
-- `checkpoint/crowd-forecast-3` complete locally: added TanStack CSRF middleware for server functions, confirmed the local dev server returns `HTTP 200`, confirmed the CSRF warning is gone, and reran `bun run verify` successfully with 57 tests. `bun audit` was attempted with network approval but hung for more than 60 seconds and was stopped.
-- Follow-up design correction: `Crowd Forecast` now has a reading guide, tooltip-backed metric labels, calmer 24h movement list, blue tournament bars, green match bars, and color-coded opponent pills for open and settled markets. `bun run verify` passes with 57 tests. Local dev server restarted cleanly after a stale TanStack server-function ID during HMR and returns `HTTP 200`.
+- `checkpoint/crowd-forecast-3` committed as `0511ddc`: added TanStack CSRF middleware for server functions, confirmed the local dev server returns `HTTP 200`, confirmed the CSRF warning is gone, and reran `bun run verify` successfully with 57 tests. `bun audit` was attempted with network approval but hung for more than 60 seconds and was stopped.
+- Follow-up design correction committed as `5d69d3f`: `Crowd Forecast` now has a reading guide, tooltip-backed metric labels, calmer 24h movement list, blue tournament bars, green match bars, and color-coded opponent pills for open and settled markets. `bun run verify` passes with 57 tests. Local dev server restarted cleanly after a stale TanStack server-function ID during HMR and returns `HTTP 200`.
+- Follow-up clarity fix committed as `a4e10d0`: matchup pills now read as `vs Opponent 31%`, and the guide explains that percentages are from the row team's viewpoint.
+
+Next planned UI pass:
+
+- Read `plans/crowd-forecast-ui-ux-quick-wins.md`.
+- Start with Phase 1: visible copy changes only. Replace abstract `Signal` language with `Chance`, change `N/A` display text to `No market`, add the one-line page summary, add a blue/green legend above group cards, and add a `Why different?` tooltip.
+- Then consider Phase 2: `Today's simplest read` and `Most uncertain matches`, using the existing forecast snapshot without new upstream requests.
 
 ## Key Decisions
 
