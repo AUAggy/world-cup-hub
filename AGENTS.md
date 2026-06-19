@@ -71,7 +71,8 @@ Current status:
 
 - `checkpoint/crowd-forecast-0` committed as `8ceea9f`.
 - `checkpoint/crowd-forecast-1` committed as `aafea49`: added forecast DTOs, provider fetchers, schema parsing, normalization, transform logic, server function, cache, and 11 forecast tests.
-- `checkpoint/crowd-forecast-2` complete locally: added the `Crowd Forecast` tab, lazy TanStack Query fetch, compact source status strip, tournament pulse, movers, group forecast cards, degraded states, and responsive tab overflow. `bun run verify` passes with 57 tests.
+- `checkpoint/crowd-forecast-2` committed as `368631c`: added the `Crowd Forecast` tab, lazy TanStack Query fetch, compact source status strip, tournament pulse, movers, group forecast cards, degraded states, and responsive tab overflow.
+- `checkpoint/crowd-forecast-3` complete locally: added TanStack CSRF middleware for server functions, confirmed the local dev server returns `HTTP 200`, confirmed the CSRF warning is gone, and reran `bun run verify` successfully with 57 tests. `bun audit` was attempted with network approval but hung for more than 60 seconds and was stopped.
 
 ## Key Decisions
 
