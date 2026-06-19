@@ -186,7 +186,7 @@ function ReadingGuide() {
         <GuideItem
           label="Pills"
           swatch="bg-paper-deep"
-          text="Opponent chips. Percentages are open markets. WIN, LOSS, and DRAW are settled."
+          text="Opponent chips. Percentages are this team's signal vs that opponent. WIN, LOSS, and DRAW are settled."
         />
         <GuideItem
           label="N/A"
@@ -405,8 +405,13 @@ function MatchSignalChip({ signal }: { signal: TeamMatchSignal }) {
         signal.result === "loss" && "border-terracotta/30 bg-terracotta-soft/35 text-terracotta",
         signal.result === "draw" && "border-ink-soft/25 bg-paper-deep text-ink-soft",
       )}
-      title={signal.opponent}
+      title={
+        settled
+          ? `Result vs ${signal.opponent}: ${result}`
+          : `Signal vs ${signal.opponent}: ${fmtPct(signal.winProbability)}`
+      }
     >
+      <span className="text-ink-soft">vs</span>
       <span className="truncate">{signal.opponent}</span>
       <span className="font-mono">{settled ? result : fmtPct(signal.winProbability)}</span>
     </span>
