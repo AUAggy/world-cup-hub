@@ -67,6 +67,11 @@ checkpoint/crowd-forecast-2 — Crowd Forecast tab UI, lazy query, degraded stat
 checkpoint/crowd-forecast-3 — Tests, CSP/header updates, final verification
 ```
 
+Current status:
+
+- `checkpoint/crowd-forecast-0` committed as `8ceea9f`.
+- `checkpoint/crowd-forecast-1` complete locally: added forecast DTOs, provider fetchers, schema parsing, normalization, transform logic, server function, cache, and 11 forecast tests. `bun run verify` passes with 57 tests.
+
 ## Key Decisions
 
 - **Default entry only**: `server.entry` in `tanstackStart()` creates a circular dependency with `@tanstack/react-start/server-entry` on Workers. Use the default entry with post-build header injection instead.
