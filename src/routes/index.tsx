@@ -1,22 +1,31 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
+import { queryOptions, useQuery, useSuspenseQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { formatSnapshotDateTime } from "@/lib/date-format";
+import { getForecast } from "@/lib/forecast.functions";
 import { getWorldCup } from "@/lib/worldcup.functions";
 import type { Match } from "@/lib/worldcup-types";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { BracketView } from "@/components/wc/BracketView";
+import { CrowdForecastView } from "@/components/wc/CrowdForecastView";
 import { GroupsView } from "@/components/wc/GroupsView";
 import { MatchesView } from "@/components/wc/MatchesView";
 import { MatchCard } from "@/components/wc/MatchCard";
 
 const CLIENT_REFRESH_MS = 30 * 60 * 1000;
+const FORECAST_REFRESH_MS = 5 * 60 * 1000;
 
 const worldCupQuery = queryOptions({
   queryKey: ["worldcup"],
   queryFn: () => getWorldCup(),
   staleTime: CLIENT_REFRESH_MS,
   refetchInterval: CLIENT_REFRESH_MS,
+});
+
+const forecastQueryOptions = queryOptions({
+  queryKey: ["forecast"],
+  queryFn: () => getForecast(),
+  staleTime: FORECAST_REFRESH_MS,
 });
 
 export const Route = createFileRoute("/")({
@@ -68,7 +77,12 @@ function pickFeatured(
 
 function Dashboard() {
   const { data } = useSuspenseQuery(worldCupQuery);
-  const [tab, setTab] = useState<"bracket" | "groups" | "matches">("bracket");
+  const [tab, setTab] = useState<"bracket" | "groups" | "matches" | "forecast">("bracket");
+  const forecastQuery = useQuery({
+    ...forecastQueryOptions,
+    enabled: tab === "forecast",
+    refetchInterval: tab === "forecast" ? FORECAST_REFRESH_MS : false,
+  });
 
   const fetchedAt = new Date(data.fetchedAt).getTime();
   const featured = useMemo(() => pickFeatured(data.matches, fetchedAt), [data.matches, fetchedAt]);
@@ -134,26 +148,34 @@ function Dashboard() {
 
         {/* Tabs */}
         <Tabs value={tab} onValueChange={(v) => setTab(v as typeof tab)} className="mt-8">
-          <TabsList className="bg-paper-deep/60 p-1 rounded-full">
-            <TabsTrigger
-              value="bracket"
-              className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
-            >
-              Bracket
-            </TabsTrigger>
-            <TabsTrigger
-              value="groups"
-              className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
-            >
-              Groups · A–L
-            </TabsTrigger>
-            <TabsTrigger
-              value="matches"
-              className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
-            >
-              All matches
-            </TabsTrigger>
-          </TabsList>
+          <div className="-mx-4 overflow-x-auto px-4 pb-1">
+            <TabsList className="bg-paper-deep/60 p-1 rounded-full">
+              <TabsTrigger
+                value="bracket"
+                className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
+              >
+                Bracket
+              </TabsTrigger>
+              <TabsTrigger
+                value="groups"
+                className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
+              >
+                Groups · A–L
+              </TabsTrigger>
+              <TabsTrigger
+                value="matches"
+                className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
+              >
+                All matches
+              </TabsTrigger>
+              <TabsTrigger
+                value="forecast"
+                className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
+              >
+                Crowd Forecast
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
           <TabsContent value="bracket" className="mt-6">
             <BracketView snapshot={data} />
@@ -163,6 +185,9 @@ function Dashboard() {
           </TabsContent>
           <TabsContent value="matches" className="mt-6">
             <MatchesView matches={data.matches} />
+          </TabsContent>
+          <TabsContent value="forecast" className="mt-6">
+            <CrowdForecastView query={forecastQuery} />
           </TabsContent>
         </Tabs>
 
