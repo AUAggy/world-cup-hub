@@ -8,7 +8,7 @@ const USER_AGENT = "WorldCupHub/1.0 (public market signal)";
 let backoffUntil = 0;
 
 export type KalshiFetchResult =
-  | { ok: true; markets: KalshiMarket[] }
+  | { ok: true; markets: KalshiMarket[]; partial: boolean; message?: string }
   | { ok: false; markets: []; message: string; status?: number; rateLimited: boolean };
 
 export async function fetchKalshiMarkets(): Promise<KalshiFetchResult> {
@@ -22,18 +22,45 @@ export async function fetchKalshiMarkets(): Promise<KalshiFetchResult> {
   }
 
   const markets: KalshiMarket[] = [];
+  const failures: Extract<KalshiFetchResult, { ok: false }>[] = [];
 
   for (const status of ["open", "settled"] as const) {
-    let cursor: string | undefined;
-    do {
-      const result = await fetchKalshiPage(status, cursor);
-      if (!result.ok) return result;
-      markets.push(...result.markets);
-      cursor = result.cursor;
-    } while (cursor);
+    const result = await fetchKalshiStatus(status);
+    if (result.ok) markets.push(...result.markets);
+    else failures.push(result);
   }
 
-  return { ok: true, markets };
+  if (markets.length > 0) {
+    return {
+      ok: true,
+      markets,
+      partial: failures.length > 0,
+      message: failures.map((failure) => failure.message).join("; ") || undefined,
+    };
+  }
+
+  return (
+    failures[0] ?? {
+      ok: false,
+      markets: [],
+      message: "Kalshi returned no markets",
+      rateLimited: false,
+    }
+  );
+}
+
+async function fetchKalshiStatus(status: "open" | "settled"): Promise<KalshiFetchResult> {
+  const markets: KalshiMarket[] = [];
+  let cursor: string | undefined;
+
+  do {
+    const result = await fetchKalshiPage(status, cursor);
+    if (!result.ok) return result;
+    markets.push(...result.markets);
+    cursor = result.cursor;
+  } while (cursor);
+
+  return { ok: true, markets, partial: false };
 }
 
 type KalshiPageResult =
