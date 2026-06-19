@@ -6,12 +6,23 @@
   "assets": {
     "directory": "dist/client",
   },
+  "routes": [
+    {
+      "pattern": "nawewe.xyz",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "www.nawewe.xyz",
+      "custom_domain": true,
+    },
+  ],
   "env": {
     "preview": {
       "name": "world-cup-hub-preview",
     },
     "production": {
       "name": "world-cup-hub",
+      "workers_dev": true,
     },
   },
 }
