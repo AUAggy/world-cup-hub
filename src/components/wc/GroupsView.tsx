@@ -69,18 +69,30 @@ function TeamTooltipCell({ row }: { row: GroupTable["rows"][number] }) {
 }
 
 function Row({ row, rank }: { row: GroupTable["rows"][number]; rank: number }) {
-  const advances = rank <= 2;
+  const teamLabel = row.team.placeholder ?? row.team.name;
+  const automaticQualifier = rank <= 2;
+  const thirdPlaceCandidate = rank === 3;
   return (
     <div
       className={cn(
         "grid grid-cols-[1.4rem_1fr_repeat(8,2rem)] items-center gap-x-1 px-3 py-2 text-sm border-b border-border/60 last:border-b-0",
-        advances && "bg-paper-deep/40",
+        automaticQualifier && "bg-paper-deep/40",
+        thirdPlaceCandidate && "bg-paper-deep/20",
       )}
+      aria-label={
+        automaticQualifier
+          ? `${teamLabel} is in an automatic qualifying position`
+          : thirdPlaceCandidate
+            ? `${teamLabel} is in the third-place ranking pool`
+            : undefined
+      }
     >
       <span
         className={cn(
           "font-mono text-xs tabular-nums",
-          advances ? "text-pitch font-semibold" : "text-ink-soft",
+          automaticQualifier && "text-pitch font-semibold",
+          thirdPlaceCandidate && "text-ink font-semibold",
+          !automaticQualifier && !thirdPlaceCandidate && "text-ink-soft",
         )}
       >
         {rank}
@@ -115,10 +127,10 @@ export function GroupsView({ groups }: { groups: GroupTable[] }) {
             key={g.group}
             className="rounded-xl border border-border bg-card overflow-hidden"
           >
-            <header className="flex items-baseline justify-between px-3 py-2.5 border-b border-border bg-paper-deep/30">
+            <header className="flex flex-col gap-0.5 px-3 py-2.5 border-b border-border bg-paper-deep/30 sm:flex-row sm:items-baseline sm:justify-between">
               <h3 className="font-display text-lg font-semibold">Group {g.group}</h3>
-              <span className="text-[11px] uppercase tracking-wider text-ink-soft">
-                Top 2 advance
+              <span className="max-w-56 text-[11px] uppercase leading-snug tracking-wider text-ink-soft sm:text-right">
+                Top 2 qualify; best 8 third-place teams advance
               </span>
             </header>
             <StatHeader />
