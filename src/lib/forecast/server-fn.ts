@@ -1,17 +1,16 @@
 import { createServerFn } from "@tanstack/react-start";
 import type { ForecastSnapshot, ForecastSourceStatus } from "../forecast-types";
-import { getCached, getDurableCached, setCached, setDurableCached } from "./cache";
-import { fetchKalshiMarkets } from "./kalshi-fetch";
-import { fetchPolymarketEvent } from "./polymarket-fetch";
-import type { KalshiMarket, PolymarketEvent } from "./schema";
+import { getCached, setCached } from "./cache";
+import { fetchPolymarketEvent, fetchPolymarketMatchEvents } from "./polymarket-fetch";
+import type { PolymarketEvent } from "./schema";
 import { assembleForecastSnapshot, FORECAST_TTL_SECONDS } from "./transform";
 
-const SNAPSHOT_CACHE_KEY = "forecast-snapshot-v1";
-const POLY_LAST_CONFIRMED_KEY = "forecast-polymarket-last-confirmed-v1";
-const KALSHI_LAST_CONFIRMED_KEY = "forecast-kalshi-last-confirmed-v1";
+const SNAPSHOT_CACHE_KEY = "forecast-snapshot-v2-polymarket-matches";
+const POLY_TOURNAMENT_LAST_CONFIRMED_KEY = "forecast-polymarket-tournament-last-confirmed-v1";
+const POLY_MATCH_LAST_CONFIRMED_KEY = "forecast-polymarket-matches-last-confirmed-v1";
 const CACHE_TTL_MS = FORECAST_TTL_SECONDS * 1000;
+const DEGRADED_SNAPSHOT_TTL_MS = 10 * 1000;
 const LAST_CONFIRMED_TTL_MS = 24 * 60 * 60 * 1000;
-const KALSHI_BACKGROUND_REFRESH_AFTER_MS = 5 * 60 * 1000;
 
 interface Stored<T> {
   data: T;
@@ -34,21 +33,21 @@ export const getForecast = createServerFn({ method: "GET" }).handler(
 );
 
 async function refreshForecast(): Promise<ForecastSnapshot> {
-  const [polymarket, kalshi] = await Promise.all([resolvePolymarket(), resolveKalshi()]);
+  const [tournament, matches] = await Promise.all([resolveTournament(), resolveMatchMarkets()]);
   const snapshot = assembleForecastSnapshot({
-    polymarket: polymarket.event,
-    kalshiMarkets: kalshi.markets,
+    polymarket: tournament.event,
+    polymarketMatchEvents: matches.events,
     statuses: {
-      polymarket: polymarket.status,
-      kalshi: kalshi.status,
+      polymarket: tournament.status,
+      matchMarkets: matches.status,
     },
   });
 
-  setCached(SNAPSHOT_CACHE_KEY, snapshot, CACHE_TTL_MS);
+  setCached(SNAPSHOT_CACHE_KEY, snapshot, snapshotCacheTtl(snapshot));
   return snapshot;
 }
 
-async function resolvePolymarket(): Promise<{
+async function resolveTournament(): Promise<{
   event: PolymarketEvent | null;
   status: ForecastSourceStatus;
 }> {
@@ -56,22 +55,26 @@ async function resolvePolymarket(): Promise<{
   if (result.ok) {
     const updatedAt = new Date().toISOString();
     setCached<Stored<PolymarketEvent>>(
-      POLY_LAST_CONFIRMED_KEY,
+      POLY_TOURNAMENT_LAST_CONFIRMED_KEY,
       { data: result.event, updatedAt },
       LAST_CONFIRMED_TTL_MS,
     );
     return { event: result.event, status: { status: "live", updatedAt } };
   }
 
-  console.warn("[forecast] Polymarket fetch failed", result.status ?? "network", result.message);
-  const cached = getCached<Stored<PolymarketEvent>>(POLY_LAST_CONFIRMED_KEY);
+  console.warn(
+    "[forecast] Polymarket tournament fetch failed",
+    result.status ?? "network",
+    result.message,
+  );
+  const cached = getCached<Stored<PolymarketEvent>>(POLY_TOURNAMENT_LAST_CONFIRMED_KEY);
   if (cached) {
     return {
       event: cached.data,
       status: {
         status: "cached",
         updatedAt: cached.updatedAt,
-        message: "Polymarket is delayed; showing last confirmed data.",
+        message: "Tournament markets are delayed; showing last confirmed data.",
       },
     };
   }
@@ -81,86 +84,67 @@ async function resolvePolymarket(): Promise<{
     status: {
       status: "unavailable",
       updatedAt: null,
-      message: "Polymarket is unavailable.",
+      message: "Tournament markets are unavailable.",
     },
   };
 }
 
-async function resolveKalshi(): Promise<{
-  markets: KalshiMarket[];
+async function resolveMatchMarkets(): Promise<{
+  events: PolymarketEvent[];
   status: ForecastSourceStatus;
 }> {
-  const cached = await getDurableCached<Stored<KalshiMarket[]>>(KALSHI_LAST_CONFIRMED_KEY);
-  if (cached && cached.data.length > 0) {
-    maybeRefreshKalshiInBackground(cached.updatedAt);
-    return {
-      markets: cached.data,
-      status: {
-        status: "cached",
-        updatedAt: cached.updatedAt,
-        message: "Kalshi is delayed; showing last confirmed data.",
-      },
-    };
-  }
-
-  return fetchAndStoreKalshi();
-}
-
-async function fetchAndStoreKalshi(): Promise<{
-  markets: KalshiMarket[];
-  status: ForecastSourceStatus;
-}> {
-  const result = await fetchKalshiMarkets();
-  if (result.ok && result.markets.length > 0) {
+  const result = await fetchPolymarketMatchEvents();
+  if (result.ok) {
     const updatedAt = new Date().toISOString();
-    if (!result.partial) {
-      await setDurableCached<Stored<KalshiMarket[]>>(
-        KALSHI_LAST_CONFIRMED_KEY,
-        { data: result.markets, updatedAt },
+    if (result.events.length > 0) {
+      setCached<Stored<PolymarketEvent[]>>(
+        POLY_MATCH_LAST_CONFIRMED_KEY,
+        { data: result.events, updatedAt },
         LAST_CONFIRMED_TTL_MS,
       );
     }
     return {
-      markets: result.markets,
+      events: result.events,
       status: {
         status: "live",
         updatedAt,
-        message: result.partial ? result.message : undefined,
+        message:
+          result.events.length === 0
+            ? "No listed World Cup match markets are open yet."
+            : undefined,
       },
     };
   }
 
-  if (result.ok) {
-    console.warn("[forecast] Kalshi returned no markets");
+  console.warn(
+    "[forecast] Polymarket match fetch failed",
+    result.status ?? "network",
+    result.message,
+  );
+  const cached = getCached<Stored<PolymarketEvent[]>>(POLY_MATCH_LAST_CONFIRMED_KEY);
+  if (cached) {
     return {
-      markets: [],
+      events: cached.data,
       status: {
-        status: "unavailable",
-        updatedAt: null,
-        message: "Kalshi returned no markets.",
+        status: "cached",
+        updatedAt: cached.updatedAt,
+        message: "Match markets are delayed; showing last confirmed data.",
       },
     };
   }
 
-  console.warn("[forecast] Kalshi fetch failed", result.status ?? "network", result.message);
   return {
-    markets: [],
+    events: [],
     status: {
       status: "unavailable",
       updatedAt: null,
-      message: result.rateLimited ? "Kalshi is rate-limited." : "Kalshi is unavailable.",
+      message: "Match markets are unavailable.",
     },
   };
 }
 
-function maybeRefreshKalshiInBackground(updatedAt: string): void {
-  const ageMs = Date.now() - new Date(updatedAt).getTime();
-  if (Number.isFinite(ageMs) && ageMs < KALSHI_BACKGROUND_REFRESH_AFTER_MS) return;
-
-  void fetchAndStoreKalshi().catch((error) => {
-    console.warn(
-      "[forecast] Kalshi background refresh failed",
-      error instanceof Error ? error.message : error,
-    );
-  });
+function snapshotCacheTtl(snapshot: ForecastSnapshot): number {
+  return snapshot.sourceStatus.matchMarkets.status === "live"
+    ? CACHE_TTL_MS
+    : DEGRADED_SNAPSHOT_TTL_MS;
 }

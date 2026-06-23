@@ -1,15 +1,12 @@
 #!/usr/bin/env node
 /**
- * Post-build: inject security headers and CF cache logic into the
+ * Post-build: inject security headers and homepage SSR cache logic into the
  * default TanStack Worker entry.
- *
- * Reads dist/server/server.js, wraps the default export's fetch method
- * to add security headers, CF Cache API caching, cache status headers,
- * and structured logging.
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, statSync, readFileSync, writeFileSync } from "node:fs";
 
 const ENTRY = "dist/server/server.js";
+const ASSETS_DIR = "dist/client/assets";
 
 const source = readFileSync(ENTRY, "utf8");
 
@@ -20,8 +17,6 @@ if (source.includes("var __wch_orig = server_default;")) {
   process.exit(1);
 }
 
-// Find the server_default variable definition and inject a wrapper
-// that replaces it.
 const wrapper = `
 var __wch_sec = {
   "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; script-src-elem 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; media-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'",
@@ -36,9 +31,15 @@ server_default = { fetch: async function(req, env, ctx) {
     var cache = null;
     try { cache = caches.default; } catch(_) {}
     var url = new URL(req.url);
+    if (url.pathname.indexOf("/assets/") === 0) {
+      var ah = new Headers(__wch_sec);
+      ah.set("content-type", "text/javascript; charset=utf-8");
+      ah.set("cache-control", "no-store");
+      return new Response("/* asset not found */\\n", { status: 404, headers: ah });
+    }
     if (url.pathname === "/" && cache && req.method === "GET") {
       var cacheUrl = new URL(req.url);
-      cacheUrl.pathname = "/__ssr/wch-v6";
+      cacheUrl.pathname = "/__ssr/wch-v9";
       cacheUrl.search = "";
       try {
         var cached = await cache.match(cacheUrl);
@@ -69,7 +70,7 @@ server_default = { fetch: async function(req, env, ctx) {
     var out = new Response(res.body,{status:res.status,statusText:res.statusText,headers:h});
     if (url.pathname === "/" && cache && res.status < 400 && req.method === "GET") {
       var putUrl = new URL(req.url);
-      putUrl.pathname = "/__ssr/wch-v6";
+      putUrl.pathname = "/__ssr/wch-v9";
       putUrl.search = "";
       var cloned = out.clone();
       cloned.headers.set("cache-control", "public, max-age=1800, s-maxage=1800");
@@ -86,7 +87,6 @@ server_default = { fetch: async function(req, env, ctx) {
 }};
 `;
 
-// Find `var server_default = ...;` and append the wrapper after it.
 const pattern = /(var server_default = [^;]+;)/;
 if (!pattern.test(source)) {
   console.error("Could not find server_default in build output");
@@ -96,4 +96,38 @@ if (!pattern.test(source)) {
 const result = source.replace(pattern, "$1" + wrapper);
 
 writeFileSync(ENTRY, result, "utf8");
+createAssetCompatibilityShims();
 console.log("Injected headers + caching into", ENTRY);
+
+function createAssetCompatibilityShims() {
+  if (!existsSync(ASSETS_DIR)) return;
+
+  const jsFiles = readdirSync(ASSETS_DIR).filter((file) => file.endsWith(".js"));
+  const indexFile = jsFiles.find(
+    (file) => file.startsWith("index-") && statSync(`${ASSETS_DIR}/${file}`).size > 100_000,
+  );
+  const routeFiles = jsFiles.filter((file) => file.startsWith("routes-"));
+  const smallRoute = routeFiles.find((file) => statSync(`${ASSETS_DIR}/${file}`).size < 10_000);
+  const bigRoute = routeFiles.find((file) => statSync(`${ASSETS_DIR}/${file}`).size > 10_000);
+
+  const shims = [
+    ["index-DIHCargV.js", indexFile],
+    ["index-DOmJQ1D0.js", indexFile],
+    ["index-maQaYiry.js", indexFile],
+    ["routes-UiNiBaoz.js", smallRoute],
+    ["routes-onnvc477.js", smallRoute],
+    ["routes-df__tGSK.js", smallRoute],
+    ["routes-BypM2G7f.js", bigRoute],
+    ["routes-CFEzmyrN.js", bigRoute],
+    ["routes-DYBQmf9C.js", bigRoute],
+  ];
+
+  for (const [oldName, currentName] of shims) {
+    if (!currentName || oldName === currentName) continue;
+    writeFileSync(
+      `${ASSETS_DIR}/${oldName}`,
+      `export * from "./${currentName}";\nimport "./${currentName}";\n`,
+      "utf8",
+    );
+  }
+}

@@ -6,7 +6,7 @@ import type {
   TeamForecast,
   TeamMatchSignal,
 } from "../forecast-types";
-import type { KalshiMarket, PolymarketEvent, PolymarketMarket } from "./schema";
+import type { PolymarketEvent, PolymarketMarket } from "./schema";
 import { FORECAST_GROUPS, normalizeTeamName } from "./teams";
 
 export const FORECAST_TTL_SECONDS = 120;
@@ -14,7 +14,7 @@ export const MOVER_THRESHOLD = 0.005;
 
 interface ProviderStatuses {
   polymarket: ForecastSourceStatus;
-  kalshi: ForecastSourceStatus;
+  matchMarkets: ForecastSourceStatus;
 }
 
 interface PolySignal {
@@ -24,37 +24,20 @@ interface PolySignal {
   totalVolume: number;
 }
 
-interface KalshiGame {
-  eventTicker: string;
-  date: string;
-  status: "active" | "finalized";
-  result: "teamA" | "teamB" | "draw" | null;
-  teamA: KalshiGameSide;
-  teamB: KalshiGameSide;
-}
-
-interface KalshiGameSide {
-  code: string;
-  name: string;
-  probability: number | null;
-  volume: number;
-  won: boolean;
-}
-
 export function assembleForecastSnapshot(input: {
   polymarket: PolymarketEvent | null;
-  kalshiMarkets: KalshiMarket[];
+  polymarketMatchEvents: PolymarketEvent[];
   statuses: ProviderStatuses;
   now?: Date;
 }): ForecastSnapshot {
   const fetchedAt = (input.now ?? new Date()).toISOString();
   const polyMap = buildPolymarketMap(input.polymarket);
-  const kalshiMap = buildKalshiTeamSignals(parseKalshiGames(input.kalshiMarkets));
+  const matchSignalMap = buildPolymarketMatchTeamSignals(input.polymarketMatchEvents);
 
   const teamForecasts: TeamForecast[] = FORECAST_GROUPS.flatMap((group) =>
     group.teams.map((team) => {
       const poly = polyMap.get(team);
-      const matchSignals = kalshiMap.get(team) ?? [];
+      const matchSignals = matchSignalMap.get(team) ?? [];
       const activeProbabilities = matchSignals
         .map((signal) => signal.winProbability)
         .filter((value): value is number => value !== null);
@@ -143,104 +126,64 @@ function buildPolymarketMap(event: PolymarketEvent | null): Map<string, PolySign
   return map;
 }
 
-export function parseKalshiGames(markets: KalshiMarket[]): KalshiGame[] {
-  const byEvent = new Map<string, KalshiMarket[]>();
-
-  for (const market of markets) {
-    if (!market.event_ticker || market.ticker.endsWith("-TIE")) continue;
-    const current = byEvent.get(market.event_ticker) ?? [];
-    current.push(market);
-    byEvent.set(market.event_ticker, current);
-  }
-
-  const games: KalshiGame[] = [];
-
-  for (const [eventTicker, sides] of byEvent) {
-    if (sides.length !== 2) continue;
-    const tieMarket = markets.find(
-      (market) => market.event_ticker === eventTicker && market.ticker.endsWith("-TIE"),
-    );
-    const status = sides.some((side) => side.status === "finalized") ? "finalized" : "active";
-    const result = resultFromMarkets(sides[0], sides[1], tieMarket);
-
-    games.push({
-      eventTicker,
-      date: eventTicker.split("-")[1] ?? "",
-      status,
-      result,
-      teamA: sideFromMarket(sides[0], result === "teamA"),
-      teamB: sideFromMarket(sides[1], result === "teamB"),
-    });
-  }
-
-  return games;
-}
-
-function buildKalshiTeamSignals(games: KalshiGame[]): Map<string, TeamMatchSignal[]> {
+function buildPolymarketMatchTeamSignals(
+  events: PolymarketEvent[],
+): Map<string, TeamMatchSignal[]> {
   const map = new Map<string, TeamMatchSignal[]>();
 
-  for (const game of games) {
-    addTeamSignal(map, game, game.teamA, game.teamB);
-    addTeamSignal(map, game, game.teamB, game.teamA);
+  for (const event of events) {
+    const sides = parseMatchTitle(event.title);
+    const date = dateFromPolymarketMatchSlug(event.slug);
+    if (!sides || !date) continue;
+
+    const teamMarkets = event.markets.filter((market) => !isDrawMarket(market));
+    for (const market of teamMarkets) {
+      const team = normalizeTeamName(market.groupItemTitle);
+      if (!team) continue;
+
+      const opponent = otherSide(team, sides, teamMarkets);
+      if (!opponent) continue;
+
+      const signals = map.get(team) ?? [];
+      signals.push({
+        opponent,
+        date,
+        winProbability: parsePolymarketProbability(market),
+        volume: market.volumeNum,
+        result: null,
+      });
+      map.set(team, signals);
+    }
   }
 
   return map;
 }
 
-function addTeamSignal(
-  map: Map<string, TeamMatchSignal[]>,
-  game: KalshiGame,
-  side: KalshiGameSide,
-  opponent: KalshiGameSide,
-): void {
-  const team = normalizeTeamName(side.name);
-  const signals = map.get(team) ?? [];
-
-  let result: TeamMatchSignal["result"] = null;
-  if (game.status === "finalized") {
-    if (game.result === "draw") result = "draw";
-    else result = side.won ? "win" : "loss";
-  }
-
-  signals.push({
-    opponent: normalizeTeamName(opponent.name),
-    date: game.date,
-    winProbability: side.probability,
-    volume: side.volume,
-    result,
-  });
-
-  map.set(team, signals);
+function parseMatchTitle(title: string): [string, string] | null {
+  const parts = title.split(/\s+vs\.?\s+/i).map((part) => normalizeTeamName(part));
+  return parts.length === 2 && parts[0] && parts[1] ? [parts[0], parts[1]] : null;
 }
 
-function sideFromMarket(market: KalshiMarket, won: boolean): KalshiGameSide {
-  const code = market.ticker.split("-").pop() ?? "";
-  return {
-    code,
-    name: market.yes_sub_title ?? market.subtitle ?? code,
-    probability:
-      market.status === "finalized"
-        ? market.result === "yes"
-          ? 1
-          : 0
-        : clampProbability(Number(market.last_price_dollars)),
-    volume: Number(market.volume_fp) || 0,
-    won,
-  };
+function dateFromPolymarketMatchSlug(slug: string): string | null {
+  return slug.match(/-(2026-\d{2}-\d{2})$/)?.[1] ?? null;
 }
 
-function resultFromMarkets(
-  sideA: KalshiMarket,
-  sideB: KalshiMarket,
-  tieMarket: KalshiMarket | undefined,
-): KalshiGame["result"] {
-  const aWon = sideA.status === "finalized" && sideA.result === "yes";
-  const bWon = sideB.status === "finalized" && sideB.result === "yes";
+function isDrawMarket(market: PolymarketMarket): boolean {
+  return market.groupItemTitle.toLowerCase().startsWith("draw");
+}
 
-  if (aWon && !bWon) return "teamA";
-  if (bWon && !aWon) return "teamB";
-  if (tieMarket?.status === "finalized" && tieMarket.result === "yes") return "draw";
-  return null;
+function otherSide(
+  team: string,
+  sides: [string, string],
+  markets: PolymarketMarket[],
+): string | null {
+  if (sides[0] === team) return sides[1];
+  if (sides[1] === team) return sides[0];
+
+  const marketOpponent = markets
+    .map((market) => normalizeTeamName(market.groupItemTitle))
+    .find((candidate) => candidate && candidate !== team);
+  return marketOpponent ?? null;
 }
 
 function clampProbability(value: number): number {

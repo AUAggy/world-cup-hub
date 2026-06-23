@@ -10,7 +10,7 @@ The default view stays bracket-first. Market data is lazy-loaded, separated from
 - Highlights live, recent, and upcoming matches.
 - Computes group tables from parsed match data.
 - Pulls official match data from ESPN's public scoreboard feed.
-- Adds an optional Crowd Forecast tab using public Polymarket and Kalshi market data.
+- Adds an optional Crowd Forecast tab using public Polymarket market data.
 - Shows close-match reads, tournament market leaders, 24h movement, and group-level market context.
 - Validates external data before it enters the app model.
 - Falls back to last-known-good data when an upstream source fails or rate-limits.
@@ -22,7 +22,7 @@ Official football data and market data are kept separate.
 
 ```text
 ESPN feed -> validation -> match model -> standings/bracket UI
-Polymarket + Kalshi -> validation -> forecast snapshot -> Crowd Forecast UI
+Polymarket tournament + match markets -> validation -> forecast snapshot -> Crowd Forecast UI
 ```
 
 The app does not create its own prediction model. Forecast percentages are public market signals from upstream providers.
@@ -32,7 +32,7 @@ The app does not create its own prediction model. Forecast percentages are publi
 - World Cup match data refreshes every 30 minutes.
 - Forecast data loads only when the Crowd Forecast tab is opened.
 - Forecast data refreshes every 5 minutes while that tab is active.
-- Kalshi 429 responses trigger a local backoff and cached fallback.
+- Match-market coverage depends on which World Cup markets Polymarket currently lists.
 - Failed refreshes do not replace known-good data with empty data.
 
 ## Stack
@@ -72,4 +72,4 @@ The deploy script runs verification, builds the app, injects production headers,
 
 ## Status
 
-Unofficial fan project. Not affiliated with FIFA, ESPN, Polymarket, or Kalshi. Nothing here is betting, trading, financial, or investment advice.
+Unofficial fan project. Not affiliated with FIFA, ESPN, or Polymarket. Nothing here is betting, trading, financial, or investment advice.

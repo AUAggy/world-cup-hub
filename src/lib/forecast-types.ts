@@ -46,7 +46,7 @@ export interface ForecastSnapshot {
   ttlSeconds: number;
   sourceStatus: {
     polymarket: ForecastSourceStatus;
-    kalshi: ForecastSourceStatus;
+    matchMarkets: ForecastSourceStatus;
   };
   teamForecasts: TeamForecast[];
   groupForecasts: GroupForecast[];

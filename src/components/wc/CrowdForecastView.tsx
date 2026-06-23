@@ -1,6 +1,11 @@
 import { useMemo, useState } from "react";
 import type { UseQueryResult } from "@tanstack/react-query";
-import type { ForecastSnapshot, TeamForecast, TeamMatchSignal } from "@/lib/forecast-types";
+import type {
+  ForecastSnapshot,
+  ForecastSourceStatus,
+  TeamForecast,
+  TeamMatchSignal,
+} from "@/lib/forecast-types";
 import { cn } from "@/lib/utils";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -50,14 +55,20 @@ export function CrowdForecastView({ query }: Props) {
               A quick read, separate from official results.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={() => query.refetch()}
-            disabled={query.isFetching}
-            className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium transition-colors hover:border-ink/25 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {query.isFetching ? "Checking..." : "Refresh"}
-          </button>
+          <div className="flex flex-col items-start gap-2 sm:items-end">
+            <div className="flex flex-wrap gap-1.5 sm:justify-end">
+              <SourceStatusPill label="Match markets" status={data.sourceStatus.matchMarkets} />
+              <SourceStatusPill label="Tournament markets" status={data.sourceStatus.polymarket} />
+            </div>
+            <button
+              type="button"
+              onClick={() => query.refetch()}
+              disabled={query.isFetching}
+              className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium transition-colors hover:border-ink/25 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {query.isFetching ? "Checking..." : "Refresh"}
+            </button>
+          </div>
         </header>
 
         <JumpNav />
@@ -128,10 +139,43 @@ export function CrowdForecastView({ query }: Props) {
 
         <p className="rounded-xl border border-dashed border-border bg-paper-deep/40 px-4 py-3 text-xs leading-relaxed text-ink-soft">
           For education and curiosity only. This is not betting, trading, financial, or investment
-          advice. Unofficial fan site. Not affiliated with FIFA, ESPN, Polymarket, or Kalshi.
+          advice. Unofficial fan site. Not affiliated with FIFA, ESPN, or Polymarket.
         </p>
       </div>
     </TooltipProvider>
+  );
+}
+
+function SourceStatusPill({ label, status }: { label: string; status: ForecastSourceStatus }) {
+  const live = status.status === "live";
+  const isMatchMarkets = label === "Match markets";
+  const text = live ? "Live" : status.status === "cached" ? "Delayed" : "Syncing";
+  const updated = status.updatedAt
+    ? `Updated ${fmtStatusTime(status.updatedAt)}`
+    : isMatchMarkets
+      ? "Waiting for listed match markets"
+      : "No update time";
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center gap-1.5 rounded-full border px-2 py-1 text-[11px] font-medium",
+        live
+          ? "border-pitch/25 bg-pitch/10 text-pitch"
+          : status.status === "cached"
+            ? "border-ink-soft/25 bg-paper-deep text-ink-soft"
+            : "border-terracotta/30 bg-terracotta-soft/20 text-terracotta",
+      )}
+      title={[updated, status.message].filter(Boolean).join(" · ")}
+    >
+      <span
+        className={cn(
+          "size-1.5 rounded-full",
+          live ? "bg-pitch" : status.status === "cached" ? "bg-ink-soft" : "bg-terracotta",
+        )}
+        aria-hidden
+      />
+      {label}: {text}
+    </span>
   );
 }
 
@@ -171,7 +215,7 @@ function ReadingGuide() {
         <GuideItem
           label="Match"
           swatch="bg-pitch"
-          text="Kalshi chance across listed group-stage matches."
+          text="Polymarket chance across listed group-stage match markets."
         />
         <GuideItem
           label="Pills"
@@ -347,7 +391,7 @@ function TeamForecastRow({ team }: { team: TeamForecast }) {
           label="Match"
           value={team.matchAverageProbability}
           colorClass="bg-pitch"
-          help="Average Kalshi chance across listed group-stage match markets."
+          help="Average Polymarket chance across listed group-stage match markets."
         />
       </div>
       {team.matchSignals.length > 0 && (
@@ -630,6 +674,17 @@ function settledLabel(result: "win" | "loss" | "draw" | null): string {
 function fmtPct(value: number | null): string {
   if (value === null) return "No market";
   return `${(value * 100).toFixed(1)}%`;
+}
+
+function fmtStatusTime(value: string): string {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleString(undefined, {
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 }
 
 function fmtMovement(value: number | null): string {

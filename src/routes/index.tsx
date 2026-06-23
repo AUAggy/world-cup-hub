@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { formatSnapshotDateTime } from "@/lib/date-format";
 import { getForecast } from "@/lib/forecast.functions";
 import { getWorldCup } from "@/lib/worldcup.functions";
+import type { ForecastSnapshot } from "@/lib/forecast-types";
 import type { Match } from "@/lib/worldcup-types";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { BracketView } from "@/components/wc/BracketView";
@@ -14,6 +15,7 @@ import { MatchCard } from "@/components/wc/MatchCard";
 
 const CLIENT_REFRESH_MS = 30 * 60 * 1000;
 const FORECAST_REFRESH_MS = 5 * 60 * 1000;
+const FORECAST_WARMUP_REFRESH_MS = 15 * 1000;
 
 const worldCupQuery = queryOptions({
   queryKey: ["worldcup"],
@@ -81,7 +83,13 @@ function Dashboard() {
   const forecastQuery = useQuery({
     ...forecastQueryOptions,
     enabled: tab === "forecast",
-    refetchInterval: tab === "forecast" ? FORECAST_REFRESH_MS : false,
+    refetchInterval: (query) => {
+      if (tab !== "forecast") return false;
+      const forecast = query.state.data as ForecastSnapshot | undefined;
+      return forecast?.sourceStatus.matchMarkets.status === "live"
+        ? FORECAST_REFRESH_MS
+        : FORECAST_WARMUP_REFRESH_MS;
+    },
   });
 
   const fetchedAt = new Date(data.fetchedAt).getTime();
@@ -195,10 +203,7 @@ function Dashboard() {
         </Tabs>
 
         <footer className="mt-12 pt-6 border-t border-border text-xs text-ink-soft flex flex-wrap justify-between gap-2">
-          <p>
-            Unofficial World Cup fan dashboard. Not affiliated with FIFA, ESPN, Polymarket, or
-            Kalshi.
-          </p>
+          <p>Unofficial World Cup fan dashboard. Not affiliated with FIFA, ESPN, or Polymarket.</p>
           <p>
             Made by{" "}
             <a

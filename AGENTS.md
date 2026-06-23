@@ -23,7 +23,7 @@ World Cup Hub is an unofficial 2026 FIFA World Cup dashboard with:
 - groups A through L,
 - all matches,
 - live/recent/next match strip,
-- optional Crowd Forecast tab using public Polymarket and Kalshi market data.
+- optional Crowd Forecast tab using public Polymarket tournament and match market data.
 
 Official football data and market data must stay visually and technically separate. The forecast layer is educational context only, not betting or financial advice.
 
@@ -35,7 +35,7 @@ Official football data and market data must stay visually and technically separa
 | `src/components/wc/CrowdForecastView.tsx` | Crowd Forecast UI |
 | `src/components/wc/MatchesView.tsx` | All matches view |
 | `src/lib/worldcup/*` | ESPN fetch, validation, transform, standings, snapshot, cache |
-| `src/lib/forecast/*` | Polymarket/Kalshi fetch, validation, transform, cache |
+| `src/lib/forecast/*` | Polymarket fetch, validation, transform, cache |
 | `src/lib/worldcup-types.ts` | Official football DTOs |
 | `src/lib/forecast-types.ts` | Forecast DTOs |
 | `src/start.ts` | TanStack middleware |
@@ -45,7 +45,7 @@ Official football data and market data must stay visually and technically separa
 
 ## Data Rules
 
-- Treat ESPN, Polymarket, and Kalshi as untrusted inputs.
+- Treat ESPN and Polymarket as untrusted inputs.
 - Validate at the boundary.
 - Drop malformed upstream records instead of crashing the page.
 - Do not replace known-good data with empty data after a failed refresh.

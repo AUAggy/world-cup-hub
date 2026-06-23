@@ -1,13 +1,8 @@
 import { describe, expect, test } from "bun:test";
 import type { ForecastSourceStatus } from "../../src/lib/forecast-types";
-import type {
-  KalshiMarket,
-  PolymarketEvent,
-  PolymarketMarket,
-} from "../../src/lib/forecast/schema";
+import type { PolymarketEvent, PolymarketMarket } from "../../src/lib/forecast/schema";
 import {
   assembleForecastSnapshot,
-  parseKalshiGames,
   parsePolymarketProbability,
 } from "../../src/lib/forecast/transform";
 
@@ -32,24 +27,25 @@ function polyMarket(team: string, price: number, movement24h: number | null): Po
   };
 }
 
-function kalshiMarket(input: {
-  ticker: string;
-  event: string;
-  team: string;
-  price: string;
-  status?: string;
-  result?: string;
-}): KalshiMarket {
+function matchEvent(input: {
+  id: string;
+  title: string;
+  slug: string;
+  teamA: string;
+  teamAPrice: number;
+  teamB: string;
+  teamBPrice: number;
+  drawPrice?: number;
+}): PolymarketEvent {
   return {
-    ticker: input.ticker,
-    title: `${input.team} wins`,
-    event_ticker: input.event,
-    last_price_dollars: input.price,
-    volume_fp: "25",
-    volume_24h_fp: "5",
-    status: input.status ?? "open",
-    result: input.result,
-    yes_sub_title: input.team,
+    id: input.id,
+    title: input.title,
+    slug: input.slug,
+    markets: [
+      polyMarket(input.teamA, input.teamAPrice, null),
+      polyMarket(`Draw (${input.title})`, input.drawPrice ?? 0.2, null),
+      polyMarket(input.teamB, input.teamBPrice, null),
+    ],
   };
 }
 
@@ -66,87 +62,29 @@ describe("parsePolymarketProbability", () => {
   });
 });
 
-describe("parseKalshiGames", () => {
-  test("builds finalized win, loss, and draw states", () => {
-    const win = parseKalshiGames([
-      kalshiMarket({
-        ticker: "KXWCGAME-260612-USA",
-        event: "KXWCGAME-260612",
-        team: "United States",
-        price: "0",
-        status: "finalized",
-        result: "yes",
-      }),
-      kalshiMarket({
-        ticker: "KXWCGAME-260612-PAR",
-        event: "KXWCGAME-260612",
-        team: "Paraguay",
-        price: "0",
-        status: "finalized",
-        result: "no",
-      }),
-    ]);
-
-    expect(win[0].result).toBe("teamA");
-    expect(win[0].teamA.probability).toBe(1);
-    expect(win[0].teamB.probability).toBe(0);
-
-    const draw = parseKalshiGames([
-      kalshiMarket({
-        ticker: "KXWCGAME-260613-BRA",
-        event: "KXWCGAME-260613",
-        team: "Brazil",
-        price: "0",
-        status: "finalized",
-        result: "no",
-      }),
-      kalshiMarket({
-        ticker: "KXWCGAME-260613-MAR",
-        event: "KXWCGAME-260613",
-        team: "Morocco",
-        price: "0",
-        status: "finalized",
-        result: "no",
-      }),
-      kalshiMarket({
-        ticker: "KXWCGAME-260613-TIE",
-        event: "KXWCGAME-260613",
-        team: "Tie",
-        price: "0",
-        status: "finalized",
-        result: "yes",
-      }),
-    ]);
-
-    expect(draw[0].result).toBe("draw");
-  });
-});
-
 describe("assembleForecastSnapshot", () => {
   test("separates tournament and match signals by team", () => {
     const polymarket: PolymarketEvent = {
       id: "30615",
       title: "World Cup Winner",
+      slug: "world-cup-winner",
       markets: [polyMarket("Brazil", 0.22, 0.02), polyMarket("United States", 0.08, -0.003)],
     };
 
     const snapshot = assembleForecastSnapshot({
       polymarket,
-      kalshiMarkets: [
-        kalshiMarket({
-          ticker: "KXWCGAME-260612-USA",
-          event: "KXWCGAME-260612",
-          team: "United States",
-          price: "0.55",
-        }),
-        kalshiMarket({
-          ticker: "KXWCGAME-260612-PAR",
-          event: "KXWCGAME-260612",
-          team: "Paraguay",
-          price: "0.31",
+      polymarketMatchEvents: [
+        matchEvent({
+          id: "351774",
+          title: "Türkiye vs. United States",
+          slug: "fifwc-tur-usa-2026-06-25",
+          teamA: "Türkiye",
+          teamAPrice: 0.35,
+          teamB: "United States",
+          teamBPrice: 0.45,
         }),
       ],
-      statuses: { polymarket: liveStatus, kalshi: liveStatus },
+      statuses: { polymarket: liveStatus, matchMarkets: liveStatus },
       now: new Date("2026-06-19T12:00:00.000Z"),
     });
 
@@ -156,8 +94,8 @@ describe("assembleForecastSnapshot", () => {
     expect(snapshot.fetchedAt).toBe("2026-06-19T12:00:00.000Z");
     expect(snapshot.groupForecasts).toHaveLength(12);
     expect(brazil?.tournament.probability).toBe(0.22);
-    expect(usa?.matchAverageProbability).toBe(0.55);
-    expect(usa?.matchSignals[0].opponent).toBe("Paraguay");
+    expect(usa?.matchAverageProbability).toBe(0.45);
+    expect(usa?.matchSignals[0].opponent).toBe("Turkey");
     expect(snapshot.movers.map((mover) => mover.team)).toEqual(["Brazil"]);
   });
 });

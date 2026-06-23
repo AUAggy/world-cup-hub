@@ -15,25 +15,8 @@ export interface PolymarketMarket {
 export interface PolymarketEvent {
   id: string;
   title: string;
+  slug: string;
   markets: PolymarketMarket[];
-}
-
-export interface KalshiMarket {
-  ticker: string;
-  title: string;
-  event_ticker: string;
-  last_price_dollars: string;
-  volume_fp: string;
-  volume_24h_fp: string;
-  status: string;
-  result?: string;
-  yes_sub_title?: string;
-  subtitle?: string;
-}
-
-export interface KalshiPayload {
-  markets: KalshiMarket[];
-  cursor?: string;
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -62,6 +45,7 @@ export function parsePolymarketEvent(payload: unknown): PolymarketEvent | null {
   return {
     id: stringValue(payload.id),
     title: stringValue(payload.title),
+    slug: stringValue(payload.slug),
     markets: payload.markets.flatMap((market) => {
       if (!isRecord(market)) return [];
       return [
@@ -77,33 +61,6 @@ export function parsePolymarketEvent(payload: unknown): PolymarketEvent | null {
           lastTradePrice: numberValue(market.lastTradePrice),
           active: booleanValue(market.active),
           closed: booleanValue(market.closed),
-        },
-      ];
-    }),
-  };
-}
-
-export function parseKalshiPayload(payload: unknown): KalshiPayload | null {
-  if (!isRecord(payload) || !Array.isArray(payload.markets)) return null;
-
-  return {
-    cursor:
-      typeof payload.cursor === "string" && payload.cursor.length > 0 ? payload.cursor : undefined,
-    markets: payload.markets.flatMap((market) => {
-      if (!isRecord(market)) return [];
-      return [
-        {
-          ticker: stringValue(market.ticker),
-          title: stringValue(market.title),
-          event_ticker: stringValue(market.event_ticker),
-          last_price_dollars: stringValue(market.last_price_dollars),
-          volume_fp: stringValue(market.volume_fp),
-          volume_24h_fp: stringValue(market.volume_24h_fp),
-          status: stringValue(market.status),
-          result: typeof market.result === "string" ? market.result : undefined,
-          yes_sub_title:
-            typeof market.yes_sub_title === "string" ? market.yes_sub_title : undefined,
-          subtitle: typeof market.subtitle === "string" ? market.subtitle : undefined,
         },
       ];
     }),
