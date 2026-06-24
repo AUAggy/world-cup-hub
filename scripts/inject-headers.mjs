@@ -39,7 +39,7 @@ server_default = { fetch: async function(req, env, ctx) {
     }
     if (url.pathname === "/" && cache && req.method === "GET") {
       var cacheUrl = new URL(req.url);
-      cacheUrl.pathname = "/__ssr/wch-v9";
+      cacheUrl.pathname = "/__ssr/wch-v10";
       cacheUrl.search = "";
       try {
         var cached = await cache.match(cacheUrl);
@@ -70,7 +70,7 @@ server_default = { fetch: async function(req, env, ctx) {
     var out = new Response(res.body,{status:res.status,statusText:res.statusText,headers:h});
     if (url.pathname === "/" && cache && res.status < 400 && req.method === "GET") {
       var putUrl = new URL(req.url);
-      putUrl.pathname = "/__ssr/wch-v9";
+      putUrl.pathname = "/__ssr/wch-v10";
       putUrl.search = "";
       var cloned = out.clone();
       cloned.headers.set("cache-control", "public, max-age=1800, s-maxage=1800");
