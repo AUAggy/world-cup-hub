@@ -65,7 +65,7 @@ function pickFeatured(
 ): {
   live: Match[];
   next: Match | null;
-  recent: Match | null;
+  recent: Match[];
 } {
   const live = matches.filter((m) => m.status === "in");
   const upcoming = matches
@@ -74,7 +74,11 @@ function pickFeatured(
   const completed = matches
     .filter((m) => m.status === "post")
     .sort((a, b) => b.date.localeCompare(a.date));
-  return { live, next: upcoming[0] ?? null, recent: completed[0] ?? null };
+  const latestCompletedDate = completed[0]?.date;
+  const recent = latestCompletedDate
+    ? completed.filter((match) => match.date === latestCompletedDate)
+    : [];
+  return { live, next: upcoming[0] ?? null, recent };
 }
 
 function Dashboard() {
@@ -126,34 +130,28 @@ function Dashboard() {
         </header>
 
         {/* Live / Next strip */}
-        {(featured.live.length > 0 || featured.next || featured.recent) && (
+        {(featured.live.length > 0 || featured.next || featured.recent.length > 0) && (
           <section className="mt-6 grid gap-3 md:grid-cols-3">
-            {featured.live[0] ? (
-              <FeaturedSlot label="Live now" match={featured.live[0]} accent />
-            ) : featured.recent ? (
-              <FeaturedSlot label="Latest result" match={featured.recent} />
-            ) : (
-              <FeaturedPlaceholder label="Latest result" text="No matches finished yet." />
+            {featured.live.map((match) => (
+              <FeaturedSlot key={match.id} label="Live now" match={match} accent />
+            ))}
+            {featured.live.length === 0 &&
+              (featured.recent.length > 0 ? (
+                featured.recent.map((match) => (
+                  <FeaturedSlot key={match.id} label="Latest result" match={match} />
+                ))
+              ) : (
+                <FeaturedPlaceholder label="Latest result" text="No matches finished yet." />
+              ))}
+            {(featured.live.length > 0 ? featured.live.length < 2 : featured.recent.length < 2) &&
+              (featured.next ? (
+                <FeaturedSlot label="Next match" match={featured.next} />
+              ) : (
+                <FeaturedPlaceholder label="Next match" text="No upcoming matches." />
+              ))}
+            {(featured.live.length > 0 ? featured.live.length : featured.recent.length) < 3 && (
+              <DataCard fetchedAt={data.fetchedAt} />
             )}
-            {featured.next ? (
-              <FeaturedSlot label="Next match" match={featured.next} />
-            ) : (
-              <FeaturedPlaceholder label="Next match" text="No upcoming matches." />
-            )}
-            <div className="rounded-xl border border-dashed border-border bg-paper-deep/40 p-3.5 flex flex-col justify-between">
-              <p className="text-[11px] uppercase tracking-wider text-ink-soft font-semibold">
-                Data
-              </p>
-              <div className="text-sm">
-                <p className="font-medium">Scores: ESPN public feed</p>
-                <p className="text-ink-soft text-xs mt-0.5">
-                  Snapshot {formatSnapshotDateTime(data.fetchedAt)} · refreshes every 30 min
-                </p>
-                <p className="text-ink-soft text-xs mt-0.5">
-                  Forecast markets load on demand · refresh every 5 min
-                </p>
-              </div>
-            </div>
           </section>
         )}
 
@@ -217,6 +215,23 @@ function Dashboard() {
             .
           </p>
         </footer>
+      </div>
+    </div>
+  );
+}
+
+function DataCard({ fetchedAt }: { fetchedAt: string }) {
+  return (
+    <div className="rounded-xl border border-dashed border-border bg-paper-deep/40 p-3.5 flex flex-col justify-between">
+      <p className="text-[11px] uppercase tracking-wider text-ink-soft font-semibold">Data</p>
+      <div className="text-sm">
+        <p className="font-medium">Scores: ESPN public feed</p>
+        <p className="text-ink-soft text-xs mt-0.5">
+          Snapshot {formatSnapshotDateTime(fetchedAt)} · refreshes every 30 min
+        </p>
+        <p className="text-ink-soft text-xs mt-0.5">
+          Forecast markets load on demand · refresh every 5 min
+        </p>
       </div>
     </div>
   );
