@@ -19,21 +19,33 @@ bun audit
 
 World Cup Hub is an unofficial 2026 FIFA World Cup dashboard with:
 
-- bracket-first tournament view,
-- groups A through L,
-- all matches,
-- live/recent/next match strip,
+- knockout-first bracket view,
+- live, latest, and next-up match desk,
+- all-match ledger with filters for live, upcoming, results, knockout, and group-stage matches,
+- Group Stage Archive for final tables, automatic qualifiers, and the third-place pool,
 - optional Crowd Forecast tab using public Polymarket tournament and match market data.
 
 Official football data and market data must stay visually and technically separate. The forecast layer is educational context only, not betting or financial advice.
+
+## UX Rules
+
+- The bracket is the primary knockout-phase surface.
+- Groups A-L remain available as archive context, not the main event after group play.
+- Match cards may show emotional football states such as `LIVE NOW`, `FULL TIME`, and `advance`, but avoid hype copy.
+- Crowd Forecast should use fan-facing language: Market read, Toss-ups, Cup chances, What changed, Archived group forecast.
+- Avoid finance-first labels in visible UI when a clearer fan label exists. Prefer `forecast`, `crowd read`, and `Cup chances` over repeated `markets`, `signals`, and `movement`.
+- Keep data-source notes quiet. Do not give operational metadata prime match-card real estate.
 
 ## Key Files
 
 | Path | Role |
 | --- | --- |
-| `src/routes/index.tsx` | Main dashboard route, tabs, metadata, footer |
+| `src/routes/index.tsx` | Main dashboard route, phase-aware tabs, metadata, footer |
+| `src/components/wc/BracketView.tsx` | Knockout bracket board |
 | `src/components/wc/CrowdForecastView.tsx` | Crowd Forecast UI |
-| `src/components/wc/MatchesView.tsx` | All matches view |
+| `src/components/wc/GroupsView.tsx` | Group Stage Archive and final tables |
+| `src/components/wc/MatchesView.tsx` | Match ledger and filters |
+| `src/components/wc/MatchCard.tsx` | Match card states and knockout consequence copy |
 | `src/lib/worldcup/*` | ESPN fetch, validation, transform, standings, snapshot, cache |
 | `src/lib/forecast/*` | Polymarket fetch, validation, transform, cache |
 | `src/lib/worldcup-types.ts` | Official football DTOs |

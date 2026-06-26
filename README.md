@@ -1,17 +1,20 @@
 # World Cup Hub
 
-World Cup Hub is an unofficial 2026 FIFA World Cup dashboard. It shows the bracket, groups, fixtures, live match status, and an optional Crowd Forecast layer that summarizes public market expectations.
+World Cup Hub is an unofficial 2026 FIFA World Cup dashboard. It puts the live bracket, fixtures, results, and group-stage archive in one place, with a separate Crowd Forecast tab for public market context.
 
-The default view stays bracket-first. Market data is lazy-loaded, separated from official results, and shown for context only.
+The app is bracket-first. During the knockout phase, the bracket becomes the main surface, matches become the live ledger, and Groups A-L move into a Group Stage Archive. Forecast data stays lazy-loaded and visually separate from official football results.
 
 ## What it does
 
-- Shows the knockout bracket, groups A through L, and every match.
-- Highlights live, recent, and upcoming matches.
-- Computes group tables from parsed match data.
+- Shows the knockout bracket as the main tournament map.
+- Highlights live, latest, and next-up matches.
+- Adds knockout consequence copy such as `advance`, `win the Cup`, and `take third place` when official results support it.
+- Provides match filters for all, live, upcoming, results, knockout, and group-stage matches.
+- Preserves final group tables, automatic qualifiers, and the third-place ranking pool in a Group Stage Archive.
 - Pulls official match data from ESPN's public scoreboard feed.
-- Adds an optional Crowd Forecast tab using public Polymarket market data.
-- Shows close-match reads, tournament market leaders, 24h movement, and group-level market context.
+- Computes group tables from parsed match data.
+- Adds an optional Crowd Forecast tab using public Polymarket tournament and match market data.
+- Presents Crowd Forecast as fan-facing sections: Market read, Toss-ups, Cup chances, What changed, and Archived group forecast.
 - Validates external data before it enters the app model.
 - Falls back to last-known-good data when an upstream source fails or rate-limits.
 - Runs as a TanStack Start app on Cloudflare Workers.
@@ -40,7 +43,7 @@ The app does not create its own prediction model. Forecast percentages are publi
 - TanStack Start
 - React 19
 - TypeScript
-- Vite
+- Vite 8
 - Tailwind CSS 4
 - Bun
 - Cloudflare Workers

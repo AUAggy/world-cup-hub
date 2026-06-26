@@ -51,17 +51,17 @@ const ROUND_LABELS: Record<RoundSlug, string> = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "World Cup Hub - Bracket, Matches & Crowd Forecast" },
+      { title: "World Cup Hub - 2026 Bracket, Fixtures & Crowd Forecast" },
       {
         name: "description",
         content:
-          "Unofficial 2026 FIFA World Cup dashboard with bracket, groups, matches, live status, and an optional Crowd Forecast layer for public market expectations.",
+          "Unofficial 2026 FIFA World Cup dashboard for the live bracket, fixtures, results, group-stage archive, and a separate Crowd Forecast from public market data.",
       },
-      { property: "og:title", content: "World Cup Hub - Bracket, Matches & Crowd Forecast" },
+      { property: "og:title", content: "World Cup Hub - 2026 Bracket, Fixtures & Crowd Forecast" },
       {
         property: "og:description",
         content:
-          "Track the 2026 World Cup bracket, groups, fixtures, live match status, and public market expectations in one lightweight fan dashboard.",
+          "Follow the 2026 World Cup bracket, match results, group-stage archive, and a separate Crowd Forecast in one lightweight fan dashboard.",
       },
     ],
   }),
@@ -185,8 +185,8 @@ function Dashboard() {
             </h1>
             <p className="mt-2 text-sm text-ink-soft max-w-xl">
               {knockoutPhase
-                ? "The groups set the field. The bracket decides everything now."
-                : "Scores first. Forecasts separate. Built for fans following the whole tournament."}
+                ? "The groups set the field. Every match now redraws the road to the final."
+                : "Scores first. Forecasts separate. A clear match-day view for World Cup fans."}
             </p>
           </div>
           <dl className="flex items-end gap-6 text-right">
@@ -213,7 +213,7 @@ function Dashboard() {
                 ))}
               {(featured.live.length > 0 ? featured.live.length < 2 : featured.recent.length < 2) &&
                 (featured.next ? (
-                  <FeaturedSlot label="Next match" match={featured.next} />
+                  <FeaturedSlot label="Next up" match={featured.next} />
                 ) : (
                   <FeaturedPlaceholder label="Next match" text="No upcoming matches." />
                 ))}
@@ -330,16 +330,15 @@ function KnockoutDashboard({
         <article className="overflow-hidden rounded-2xl border border-border bg-card">
           <header className="border-b border-border bg-paper-deep/30 px-4 py-4 sm:px-5">
             <p className="text-[11px] uppercase tracking-[0.2em] text-terracotta font-semibold">
-              Knockout map
+              Road to the final
             </p>
             <div className="mt-1 flex flex-wrap items-end justify-between gap-3">
               <div>
                 <h2 className="font-display text-2xl font-semibold tracking-tight">
-                  The bracket is the tournament now
+                  The bracket carries the story now
                 </h2>
                 <p className="mt-1 max-w-2xl text-sm text-ink-soft">
-                  Official fixtures and results stay here. Forecasts remain a separate context
-                  layer.
+                  Official fixtures and results anchor the page. Crowd Forecast stays separate.
                 </p>
               </div>
               {currentRound && (
@@ -385,9 +384,9 @@ function TodayRail({ featured }: { featured: FeaturedMatches }) {
       <header className="mb-3 flex items-baseline justify-between gap-3 border-b border-border pb-2">
         <div>
           <p className="text-[11px] uppercase tracking-wider text-terracotta font-semibold">
-            Today panel
+            Match-day desk
           </p>
-          <h3 className="font-display text-lg font-semibold">Now, next, latest</h3>
+          <h3 className="font-display text-lg font-semibold">Live, next, latest</h3>
         </div>
       </header>
       <div className="space-y-3">
@@ -419,8 +418,8 @@ function ForecastSidecar({ onOpenForecast }: { onOpenForecast: () => void }) {
       </p>
       <h3 className="mt-1 font-display text-lg font-semibold">Crowd context, not official data</h3>
       <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-        Public market expectations stay outside the bracket. Open them when you want the crowd read
-        on uncertainty and movement.
+        Public market expectations stay outside the bracket. Use them as a crowd read on toss-ups,
+        Cup chances, and movement.
       </p>
       <button
         type="button"
@@ -446,7 +445,7 @@ function RoundFocus({ round, matches }: { round: RoundSlug; matches: Match[] }) 
           <h2 className="font-display text-xl font-semibold">{ROUND_LABELS[round]}</h2>
         </div>
         <p className="max-w-md text-xs text-ink-soft sm:text-right">
-          Fast scan for the round in focus. The full path remains in the bracket above.
+          A quick scan of the round in focus. The full path stays in the bracket above.
         </p>
       </header>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -465,8 +464,8 @@ function DataSourcesDetails({ fetchedAt }: { fetchedAt: string }) {
         Data sources
       </summary>
       <p className="mt-2 leading-relaxed">
-        Scores come from ESPN public feeds. Snapshot {formatSnapshotDateTime(fetchedAt)}. Forecasts
-        come from public Polymarket markets, load only when opened, and are context only.
+        Scores come from ESPN public feeds. Snapshot {formatSnapshotDateTime(fetchedAt)}. Crowd
+        Forecast uses public Polymarket markets, loads only when opened, and is context only.
       </p>
     </details>
   );
