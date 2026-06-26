@@ -49,16 +49,17 @@ export function CrowdForecastView({ query }: Props) {
               Crowd Forecast
             </p>
             <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight mt-1">
-              What public markets expect
+              Crowd read, separate from results
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-ink-soft">
-              A quick read, separate from official results.
+              A fan-friendly read of public market expectations: what to watch, who can win, and
+              what changed.
             </p>
           </div>
           <div className="flex flex-col items-start gap-2 sm:items-end">
             <div className="flex flex-wrap gap-1.5 sm:justify-end">
-              <SourceStatusPill label="Match markets" status={data.sourceStatus.matchMarkets} />
-              <SourceStatusPill label="Tournament markets" status={data.sourceStatus.polymarket} />
+              <SourceStatusPill label="Match forecast" status={data.sourceStatus.matchMarkets} />
+              <SourceStatusPill label="Cup forecast" status={data.sourceStatus.polymarket} />
             </div>
             <button
               type="button"
@@ -72,70 +73,29 @@ export function CrowdForecastView({ query }: Props) {
         </header>
 
         <JumpNav />
-        <ReadingGuide />
+        <MarketRead snapshot={data} />
+        <TossUps forecasts={data.teamForecasts} id="forecast-toss-ups" />
 
-        <TodaysSimplestRead snapshot={data} />
-        <UncertainMatches forecasts={data.teamForecasts} id="forecast-close" />
-
-        <section id="forecast-pulse">
+        <section id="forecast-cup-chances">
           <SectionHeader
-            kicker="Tournament Pulse"
-            title="Who the market thinks can win it all"
-            note={`Top ${data.topTournamentSignals.length} Polymarket tournament chances`}
+            kicker="Cup chances"
+            title="Who the crowd thinks can win it all"
+            note={`Top ${data.topTournamentSignals.length} tournament market signals`}
           />
           <TournamentPulse teams={data.topTournamentSignals} />
         </section>
 
-        <section>
+        <section id="forecast-what-changed">
           <SectionHeader
-            kicker="Movement"
-            title="24h movement"
-            note="Quiet list of teams that moved more than 0.5 percentage points"
+            kicker="What changed"
+            title="Biggest 24h shifts"
+            note="Neutral movement from public market pricing. No invented reasons."
           />
-          <Movers teams={data.movers} />
+          <WhatChanged teams={data.movers} />
         </section>
 
-        <section id="forecast-groups">
-          <SectionHeader
-            kicker="Group Forecast"
-            title="All groups, without replacing standings"
-            note="Groups tab = official results. Forecast tab = public market expectation."
-          />
-          <p className="mt-4 text-xs text-ink-soft">
-            <span
-              className="inline-block size-2 rounded-full bg-[oklch(0.5_0.12_250)] mr-1.5 align-middle"
-              aria-hidden
-            />
-            Blue = chance to win the Cup
-            <span className="mx-2 text-border" aria-hidden>
-              ·
-            </span>
-            <span
-              className="inline-block size-2 rounded-full bg-pitch mr-1.5 align-middle"
-              aria-hidden
-            />
-            Green = chance in listed group matches{" "}
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button
-                  type="button"
-                  className="inline underline decoration-dotted decoration-ink-soft/40 underline-offset-4 hover:decoration-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                  aria-label="Why can blue and green bars differ?"
-                >
-                  Why different?
-                </button>
-              </TooltipTrigger>
-              <TooltipContent side="top" className="max-w-56 text-xs">
-                A team can be favored in one match and still have a low chance to win the Cup.
-              </TooltipContent>
-            </Tooltip>
-          </p>
-          <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {data.groupForecasts.map((group) => (
-              <GroupForecastCard key={group.group} group={group.group} teams={group.teams} />
-            ))}
-          </div>
-        </section>
+        <ArchivedGroupForecast snapshot={data} />
+        <ReadingGuide />
 
         <p className="rounded-xl border border-dashed border-border bg-paper-deep/40 px-4 py-3 text-xs leading-relaxed text-ink-soft">
           For education and curiosity only. This is not betting, trading, financial, or investment
@@ -148,7 +108,7 @@ export function CrowdForecastView({ query }: Props) {
 
 function SourceStatusPill({ label, status }: { label: string; status: ForecastSourceStatus }) {
   const live = status.status === "live";
-  const isMatchMarkets = label === "Match markets";
+  const isMatchMarkets = label === "Match forecast";
   const text = live ? "Live" : status.status === "cached" ? "Delayed" : "Syncing";
   const updated = status.updatedAt
     ? `Updated ${fmtStatusTime(status.updatedAt)}`
@@ -487,6 +447,235 @@ function EmptyForecast({ text }: { text: string }) {
   );
 }
 
+function MarketRead({ snapshot }: { snapshot: ForecastSnapshot }) {
+  const closest = findUncertainMatches(snapshot.teamForecasts)[0];
+  const top = snapshot.topTournamentSignals[0];
+  const mover = snapshot.movers[0];
+
+  return (
+    <section id="forecast-read" className="rounded-2xl border border-border bg-card">
+      <header className="border-b border-border bg-paper-deep/30 px-4 py-3">
+        <p className="text-[11px] uppercase tracking-wider text-terracotta font-semibold">
+          Market read
+        </p>
+        <h3 className="font-display text-xl font-semibold">The crowd view in 30 seconds</h3>
+      </header>
+      <div className="grid gap-0 divide-y divide-border/60 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <InsightCard
+          label="Most uncertain match"
+          value={closest ? `${closest.teamA} vs ${closest.teamB}` : "No open match markets"}
+          detail={closest ? marketPairText(closest.probA, closest.probB) : "Waiting for matches"}
+        />
+        <InsightCard
+          label="Highest Cup chance"
+          value={top?.team ?? "No tournament market"}
+          detail={top ? fmtPct(top.tournament.probability) : "Waiting for data"}
+        />
+        <InsightCard
+          label="Biggest 24h shift"
+          value={mover?.team ?? "No major movement"}
+          detail={mover ? fmtMovement(mover.movement24h) : "Quiet market"}
+          detailClassName={mover ? movementClass(mover.movement24h) : undefined}
+        />
+      </div>
+    </section>
+  );
+}
+
+function InsightCard({
+  label,
+  value,
+  detail,
+  detailClassName,
+}: {
+  label: string;
+  value: string;
+  detail: string;
+  detailClassName?: string;
+}) {
+  return (
+    <div className="px-4 py-4">
+      <p className="text-[11px] uppercase tracking-wider text-ink-soft font-semibold">{label}</p>
+      <p className="mt-2 text-sm font-medium leading-snug">{value}</p>
+      <p className={cn("mt-1 font-display text-xl font-semibold tabular-nums", detailClassName)}>
+        {detail}
+      </p>
+    </div>
+  );
+}
+
+function TossUps({ forecasts, id }: { forecasts: TeamForecast[]; id?: string }) {
+  const matches = useMemo(() => findUncertainMatches(forecasts), [forecasts]);
+
+  return (
+    <section id={id}>
+      <SectionHeader
+        kicker="Toss-ups"
+        title="Matches where the crowd is least certain"
+        note="Closest available match markets, shown as uncertainty rather than official probability."
+      />
+      {matches.length === 0 ? (
+        <EmptyForecast text="No open match markets to compare." />
+      ) : (
+        <div className="grid gap-3 lg:grid-cols-2">
+          {matches.map((match) => (
+            <MatchProbabilityCard
+              key={`${match.teamA}-${match.teamB}-${match.date}`}
+              match={match}
+            />
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function MatchProbabilityCard({
+  match,
+}: {
+  match: ReturnType<typeof findUncertainMatches>[number];
+}) {
+  return (
+    <article className="rounded-xl border border-border bg-card p-4">
+      <header className="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <p className="text-sm font-medium">
+          {match.teamA} <span className="text-ink-soft">vs</span> {match.teamB}
+        </p>
+        <span
+          className={cn(
+            "rounded-full border px-2 py-0.5 text-[11px] font-medium",
+            match.label === "Toss-up" && "border-pitch/25 bg-pitch/10 text-pitch",
+            match.label === "Lean" &&
+              "border-terracotta-soft/30 bg-terracotta-soft/15 text-terracotta",
+            match.label === "Strong lean" && "border-ink-soft/25 bg-paper-deep text-ink-soft",
+          )}
+        >
+          {match.label}
+        </span>
+      </header>
+      <div className="space-y-2">
+        <ProbabilityRow team={match.teamA} value={match.probA} />
+        <ProbabilityRow team={match.teamB} value={match.probB} />
+      </div>
+      <p className="mt-3 text-[11px] text-ink-soft">Market date {fmtMarketDate(match.date)}</p>
+    </article>
+  );
+}
+
+function ProbabilityRow({ team, value }: { team: string; value: number | null }) {
+  return (
+    <div className="grid grid-cols-[minmax(5rem,1fr)_minmax(5rem,1.4fr)_3.5rem] items-center gap-2 text-sm">
+      <span className="truncate font-medium">{team}</span>
+      <div className="h-2 overflow-hidden rounded-full bg-paper-deep" aria-hidden>
+        {value !== null && (
+          <div className="h-full rounded-full bg-pitch" style={{ width: fmtWidth(value) }} />
+        )}
+      </div>
+      <span className="text-right font-display tabular-nums">{fmtPct(value)}</span>
+    </div>
+  );
+}
+
+function WhatChanged({ teams }: { teams: ForecastSnapshot["movers"] }) {
+  const [showAll, setShowAll] = useState(false);
+
+  if (teams.length === 0) return <EmptyForecast text="No major movement in the last 24 hours." />;
+
+  const visible = showAll ? teams : teams.slice(0, 5);
+  const hidden = teams.length - visible.length;
+
+  return (
+    <div className="overflow-hidden rounded-xl border border-border bg-card">
+      {visible.map((team) => (
+        <div
+          key={team.team}
+          className="flex items-center justify-between gap-3 border-b border-border/60 px-4 py-3 text-sm last:border-b-0"
+        >
+          <div className="min-w-0">
+            <p className="truncate font-medium">{team.team}</p>
+            <p className="text-xs text-ink-soft">Moved in public market pricing</p>
+          </div>
+          <div className="shrink-0 text-right tabular-nums">
+            <p className="text-xs text-ink-soft sm:text-sm">{fmtPct(team.probability)}</p>
+            <p
+              className={cn("font-display text-lg leading-tight", movementClass(team.movement24h))}
+            >
+              {fmtMovement(team.movement24h)}
+            </p>
+          </div>
+        </div>
+      ))}
+      {hidden > 0 && (
+        <button
+          type="button"
+          onClick={() => setShowAll(!showAll)}
+          className="w-full px-3 py-2 text-center text-xs text-ink-soft hover:text-ink transition-colors"
+        >
+          {showAll ? "Show fewer" : `Show all ${teams.length}`}
+        </button>
+      )}
+    </div>
+  );
+}
+
+function ArchivedGroupForecast({ snapshot }: { snapshot: ForecastSnapshot }) {
+  return (
+    <section id="forecast-archive">
+      <details className="group rounded-xl border border-border bg-card">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 marker:hidden">
+          <span>
+            <span className="block text-[11px] uppercase tracking-wider text-terracotta font-semibold">
+              Archived group forecast
+            </span>
+            <span className="font-display text-lg font-semibold">Group-stage market archive</span>
+          </span>
+          <span className="text-xs text-ink-soft group-open:hidden">Open archive</span>
+          <span className="hidden text-xs text-ink-soft group-open:inline">Hide archive</span>
+        </summary>
+        <div className="border-t border-border px-4 py-4">
+          <ForecastLegend />
+          <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {snapshot.groupForecasts.map((group) => (
+              <GroupForecastCard key={group.group} group={group.group} teams={group.teams} />
+            ))}
+          </div>
+        </div>
+      </details>
+    </section>
+  );
+}
+
+function ForecastLegend() {
+  return (
+    <p className="text-xs text-ink-soft">
+      <span
+        className="inline-block size-2 rounded-full bg-[oklch(0.5_0.12_250)] mr-1.5 align-middle"
+        aria-hidden
+      />
+      Blue = chance to win the Cup
+      <span className="mx-2 text-border" aria-hidden>
+        ·
+      </span>
+      <span className="inline-block size-2 rounded-full bg-pitch mr-1.5 align-middle" aria-hidden />
+      Green = chance in listed group matches{" "}
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <button
+            type="button"
+            className="inline underline decoration-dotted decoration-ink-soft/40 underline-offset-4 hover:decoration-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Why can blue and green bars differ?"
+          >
+            Why different?
+          </button>
+        </TooltipTrigger>
+        <TooltipContent side="top" className="max-w-56 text-xs">
+          A team can be favored in one match and still have a low chance to win the Cup.
+        </TooltipContent>
+      </Tooltip>
+    </p>
+  );
+}
+
 function TodaysSimplestRead({ snapshot }: { snapshot: ForecastSnapshot }) {
   const top = snapshot.topTournamentSignals[0];
   const mover = snapshot.movers[0];
@@ -642,25 +831,23 @@ function findUncertainMatches(forecasts: TeamForecast[]) {
 function JumpNav() {
   return (
     <nav className="flex gap-1.5 overflow-x-auto" aria-label="Jump to forecast section">
-      <a
-        href="#forecast-pulse"
-        className="shrink-0 rounded-full border border-border px-3 py-1 text-xs font-medium hover:bg-paper-deep transition-colors"
-      >
-        Pulse
-      </a>
-      <a
-        href="#forecast-close"
-        className="shrink-0 rounded-full border border-border px-3 py-1 text-xs font-medium hover:bg-paper-deep transition-colors"
-      >
-        Close matches
-      </a>
-      <a
-        href="#forecast-groups"
-        className="shrink-0 rounded-full border border-border px-3 py-1 text-xs font-medium hover:bg-paper-deep transition-colors"
-      >
-        Groups
-      </a>
+      <ForecastJumpLink href="#forecast-read">Market read</ForecastJumpLink>
+      <ForecastJumpLink href="#forecast-toss-ups">Toss-ups</ForecastJumpLink>
+      <ForecastJumpLink href="#forecast-cup-chances">Cup chances</ForecastJumpLink>
+      <ForecastJumpLink href="#forecast-what-changed">What changed</ForecastJumpLink>
+      <ForecastJumpLink href="#forecast-archive">Archive</ForecastJumpLink>
     </nav>
+  );
+}
+
+function ForecastJumpLink({ href, children }: { href: string; children: string }) {
+  return (
+    <a
+      href={href}
+      className="shrink-0 rounded-full border border-border px-3 py-1 text-xs font-medium hover:bg-paper-deep transition-colors"
+    >
+      {children}
+    </a>
   );
 }
 
@@ -685,6 +872,22 @@ function fmtStatusTime(value: string): string {
     hour: "2-digit",
     minute: "2-digit",
   });
+}
+
+function fmtMarketDate(value: string): string {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleString(undefined, {
+    month: "short",
+    day: "numeric",
+  });
+}
+
+function marketPairText(probA: number | null, probB: number | null): string {
+  if (probA === null && probB === null) return "No market";
+  if (probA === null) return `No market / ${fmtPct(probB)}`;
+  if (probB === null) return `${fmtPct(probA)} / No market`;
+  return `${fmtPct(probA)} / ${fmtPct(probB)}`;
 }
 
 function fmtMovement(value: number | null): string {
