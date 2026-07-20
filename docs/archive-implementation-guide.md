@@ -279,6 +279,7 @@ costs nothing; the archive does not care where it lives.
 - [x] **8.** Commit to URL decision (Option A or B); update `wrangler.jsonc`
       if B; final production deploy. *(Option A decided: apex stays the
       live archive; 2030 decision deferred.)*
-- [ ] **8.** `git tag v1.0-final-tournament`; push; archive the GitHub repo.
+- [x] **8.** `git tag v1.0-final-tournament`; push; archive the GitHub repo.
+      *(Tagged and pushed 2026-07-20; repo archived read-only via gh.)*
 - [ ] Optional later: generic tournament-engine extraction
       (assessment option 5) — out of scope for this plan.
