@@ -4,6 +4,19 @@ Deployed app: `https://world-cup-hub.hello-cloudflare-432.workers.dev`
 
 Stack: TanStack Start, React 19, Vite 8, TypeScript, Tailwind CSS 4, Bun, Cloudflare Workers.
 
+## Working Principles (Feynman Lenses)
+
+All work on this repo is assessed through three lenses. Apply them before
+writing any code.
+
+- **KISS:** choose the simplest design that solves the actual problem.
+  Prefer deleting over adding. No abstraction without a second caller.
+- **First principles:** reason from what is true — data shapes, failure
+  modes, user needs — not from habit, ceremony, or what similar projects do.
+- **Clarity over ambiguity:** name things plainly, make failures loud,
+  write decisions down. If you cannot explain a design simply, you do not
+  understand it yet — simplify until you can.
+
 ## Start Here
 
 ```sh
@@ -63,6 +76,12 @@ Official football data and market data must stay visually and technically separa
 - Do not replace known-good data with empty data after a failed refresh.
 - Keep market data lazy-loaded and separate from official standings.
 - Do not put secrets in `VITE_*` variables.
+
+## Decision Rule
+
+When two designs both work, pick the one a new session can understand in
+five minutes. Complexity must be *justified by a stated need* in the PR or
+commit message; simplicity is the default and needs no justification.
 
 ## Verification
 

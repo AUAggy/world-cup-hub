@@ -1,0 +1,1478 @@
+{
+  "capturedAt": "2026-07-20T01:40:46.735Z",
+  "note": "Final archive snapshot",
+  "snapshot": {
+    "fetchedAt": "2026-07-20T01:40:46.735Z",
+    "ttlSeconds": 120,
+    "sourceStatus": {
+      "polymarket": {
+        "status": "live",
+        "updatedAt": "2026-07-20T01:40:46.735Z"
+      },
+      "matchMarkets": {
+        "status": "live",
+        "updatedAt": "2026-07-20T01:40:46.735Z"
+      }
+    },
+    "teamForecasts": [
+      {
+        "team": "Mexico",
+        "group": "A",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.034,
+          "volume24h": 0,
+          "totalVolume": 137807960.8917842
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "South Africa",
+        "group": "A",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 46577445.48789424
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "South Korea",
+        "group": "A",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 107521229.19240354
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Czechia",
+        "group": "A",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 57485266.93301565
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Canada",
+        "group": "B",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.002,
+          "volume24h": 0,
+          "totalVolume": 102858402.64237365
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Bosnia and Herzegovina",
+        "group": "B",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 63473942.77971768
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Switzerland",
+        "group": "B",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.016,
+          "volume24h": 0,
+          "totalVolume": 132837715.7947361
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Qatar",
+        "group": "B",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 45097302.84833185
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Brazil",
+        "group": "C",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.064,
+          "volume24h": 0,
+          "totalVolume": 81936874.65550427
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Morocco",
+        "group": "C",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.028,
+          "volume24h": 0,
+          "totalVolume": 152254451.3257818
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Haiti",
+        "group": "C",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 33265926.54182009
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Scotland",
+        "group": "C",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 67943136.59193021
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "USA",
+        "group": "D",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.032,
+          "volume24h": 0,
+          "totalVolume": 142460221.86557126
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Paraguay",
+        "group": "D",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.001,
+          "volume24h": 0,
+          "totalVolume": 107400630.58821647
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Turkey",
+        "group": "D",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.004,
+          "volume24h": 0,
+          "totalVolume": 61684097.10867325
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Australia",
+        "group": "D",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.001,
+          "volume24h": 0,
+          "totalVolume": 88367393.01311678
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Germany",
+        "group": "E",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.039,
+          "volume24h": 0,
+          "totalVolume": 80873590.38103242
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Curacao",
+        "group": "E",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 44007492.74691623
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Ivory Coast",
+        "group": "E",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.002,
+          "volume24h": 0,
+          "totalVolume": 111749187.63597094
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Ecuador",
+        "group": "E",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.005,
+          "volume24h": 0,
+          "totalVolume": 96888032.22035679
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Netherlands",
+        "group": "F",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.05,
+          "volume24h": 0,
+          "totalVolume": 77727053.21317497
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Japan",
+        "group": "F",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.01,
+          "volume24h": 0,
+          "totalVolume": 95790683.29305987
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Sweden",
+        "group": "F",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.001,
+          "volume24h": 0,
+          "totalVolume": 77544086.61694826
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Tunisia",
+        "group": "F",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 36470355.983686015
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Belgium",
+        "group": "G",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.021,
+          "volume24h": 0,
+          "totalVolume": 129278677.369467
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Egypt",
+        "group": "G",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.003,
+          "volume24h": 0,
+          "totalVolume": 158580818.67117897
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Iran",
+        "group": "G",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 62233146.37678978
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "New Zealand",
+        "group": "G",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 47529246.662645176
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Spain",
+        "group": "H",
+        "tournament": {
+          "probability": 1,
+          "movement24h": 0.409,
+          "volume24h": 26829643.097290184,
+          "totalVolume": 152168021.58979887
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Cape Verde",
+        "group": "H",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 119207233.3327582
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Saudi Arabia",
+        "group": "H",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 57271836.512883715
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Uruguay",
+        "group": "H",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.001,
+          "volume24h": 0,
+          "totalVolume": 78019361.83129518
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "France",
+        "group": "I",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.39,
+          "volume24h": 0,
+          "totalVolume": 132448346.86106883
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Senegal",
+        "group": "I",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.005,
+          "volume24h": 0,
+          "totalVolume": 80692765.78550497
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Iraq",
+        "group": "I",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 30615070.59271094
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Norway",
+        "group": "I",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.059,
+          "volume24h": 0,
+          "totalVolume": 137345387.0652803
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Argentina",
+        "group": "J",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.409,
+          "volume24h": 14560126.156992069,
+          "totalVolume": 174315688.25573426
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Algeria",
+        "group": "J",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 90337041.03721622
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Austria",
+        "group": "J",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.001,
+          "volume24h": 0,
+          "totalVolume": 85671553.448979
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Jordan",
+        "group": "J",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 33082576.34188277
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Portugal",
+        "group": "K",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.058,
+          "volume24h": 0,
+          "totalVolume": 109092961.84747173
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Congo DR",
+        "group": "K",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 96120346.28892957
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Uzbekistan",
+        "group": "K",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 61524249.26841759
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Colombia",
+        "group": "K",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.032,
+          "volume24h": 0,
+          "totalVolume": 104668584.41449788
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "England",
+        "group": "L",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.228,
+          "volume24h": 0,
+          "totalVolume": 110162254.18757918
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Croatia",
+        "group": "L",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.003,
+          "volume24h": 0,
+          "totalVolume": 109483286.88874409
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Ghana",
+        "group": "L",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 89137687.48381385
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Panama",
+        "group": "L",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 20049174.385756884
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      }
+    ],
+    "groupForecasts": [
+      {
+        "group": "A",
+        "teams": [
+          {
+            "team": "Mexico",
+            "group": "A",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.034,
+              "volume24h": 0,
+              "totalVolume": 137807960.8917842
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "South Africa",
+            "group": "A",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 46577445.48789424
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "South Korea",
+            "group": "A",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 107521229.19240354
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Czechia",
+            "group": "A",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 57485266.93301565
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "B",
+        "teams": [
+          {
+            "team": "Canada",
+            "group": "B",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.002,
+              "volume24h": 0,
+              "totalVolume": 102858402.64237365
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Bosnia and Herzegovina",
+            "group": "B",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 63473942.77971768
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Switzerland",
+            "group": "B",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.016,
+              "volume24h": 0,
+              "totalVolume": 132837715.7947361
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Qatar",
+            "group": "B",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 45097302.84833185
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "C",
+        "teams": [
+          {
+            "team": "Brazil",
+            "group": "C",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.064,
+              "volume24h": 0,
+              "totalVolume": 81936874.65550427
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Morocco",
+            "group": "C",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.028,
+              "volume24h": 0,
+              "totalVolume": 152254451.3257818
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Haiti",
+            "group": "C",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 33265926.54182009
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Scotland",
+            "group": "C",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 67943136.59193021
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "D",
+        "teams": [
+          {
+            "team": "USA",
+            "group": "D",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.032,
+              "volume24h": 0,
+              "totalVolume": 142460221.86557126
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Paraguay",
+            "group": "D",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.001,
+              "volume24h": 0,
+              "totalVolume": 107400630.58821647
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Turkey",
+            "group": "D",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.004,
+              "volume24h": 0,
+              "totalVolume": 61684097.10867325
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Australia",
+            "group": "D",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.001,
+              "volume24h": 0,
+              "totalVolume": 88367393.01311678
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "E",
+        "teams": [
+          {
+            "team": "Germany",
+            "group": "E",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.039,
+              "volume24h": 0,
+              "totalVolume": 80873590.38103242
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Curacao",
+            "group": "E",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 44007492.74691623
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Ivory Coast",
+            "group": "E",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.002,
+              "volume24h": 0,
+              "totalVolume": 111749187.63597094
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Ecuador",
+            "group": "E",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.005,
+              "volume24h": 0,
+              "totalVolume": 96888032.22035679
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "F",
+        "teams": [
+          {
+            "team": "Netherlands",
+            "group": "F",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.05,
+              "volume24h": 0,
+              "totalVolume": 77727053.21317497
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Japan",
+            "group": "F",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.01,
+              "volume24h": 0,
+              "totalVolume": 95790683.29305987
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Sweden",
+            "group": "F",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.001,
+              "volume24h": 0,
+              "totalVolume": 77544086.61694826
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Tunisia",
+            "group": "F",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 36470355.983686015
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "G",
+        "teams": [
+          {
+            "team": "Belgium",
+            "group": "G",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.021,
+              "volume24h": 0,
+              "totalVolume": 129278677.369467
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Egypt",
+            "group": "G",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.003,
+              "volume24h": 0,
+              "totalVolume": 158580818.67117897
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Iran",
+            "group": "G",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 62233146.37678978
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "New Zealand",
+            "group": "G",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 47529246.662645176
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "H",
+        "teams": [
+          {
+            "team": "Spain",
+            "group": "H",
+            "tournament": {
+              "probability": 1,
+              "movement24h": 0.409,
+              "volume24h": 26829643.097290184,
+              "totalVolume": 152168021.58979887
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Cape Verde",
+            "group": "H",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 119207233.3327582
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Saudi Arabia",
+            "group": "H",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 57271836.512883715
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Uruguay",
+            "group": "H",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.001,
+              "volume24h": 0,
+              "totalVolume": 78019361.83129518
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "I",
+        "teams": [
+          {
+            "team": "France",
+            "group": "I",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.39,
+              "volume24h": 0,
+              "totalVolume": 132448346.86106883
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Senegal",
+            "group": "I",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.005,
+              "volume24h": 0,
+              "totalVolume": 80692765.78550497
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Iraq",
+            "group": "I",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 30615070.59271094
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Norway",
+            "group": "I",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.059,
+              "volume24h": 0,
+              "totalVolume": 137345387.0652803
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "J",
+        "teams": [
+          {
+            "team": "Argentina",
+            "group": "J",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.409,
+              "volume24h": 14560126.156992069,
+              "totalVolume": 174315688.25573426
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Algeria",
+            "group": "J",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 90337041.03721622
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Austria",
+            "group": "J",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.001,
+              "volume24h": 0,
+              "totalVolume": 85671553.448979
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Jordan",
+            "group": "J",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 33082576.34188277
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "K",
+        "teams": [
+          {
+            "team": "Portugal",
+            "group": "K",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.058,
+              "volume24h": 0,
+              "totalVolume": 109092961.84747173
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Congo DR",
+            "group": "K",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 96120346.28892957
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Uzbekistan",
+            "group": "K",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 61524249.26841759
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Colombia",
+            "group": "K",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.032,
+              "volume24h": 0,
+              "totalVolume": 104668584.41449788
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      },
+      {
+        "group": "L",
+        "teams": [
+          {
+            "team": "England",
+            "group": "L",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.228,
+              "volume24h": 0,
+              "totalVolume": 110162254.18757918
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Croatia",
+            "group": "L",
+            "tournament": {
+              "probability": 0,
+              "movement24h": -0.003,
+              "volume24h": 0,
+              "totalVolume": 109483286.88874409
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Ghana",
+            "group": "L",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 89137687.48381385
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          },
+          {
+            "team": "Panama",
+            "group": "L",
+            "tournament": {
+              "probability": 0,
+              "movement24h": null,
+              "volume24h": 0,
+              "totalVolume": 20049174.385756884
+            },
+            "matchAverageProbability": null,
+            "matchSignals": []
+          }
+        ]
+      }
+    ],
+    "topTournamentSignals": [
+      {
+        "team": "Spain",
+        "group": "H",
+        "tournament": {
+          "probability": 1,
+          "movement24h": 0.409,
+          "volume24h": 26829643.097290184,
+          "totalVolume": 152168021.58979887
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Mexico",
+        "group": "A",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.034,
+          "volume24h": 0,
+          "totalVolume": 137807960.8917842
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "South Africa",
+        "group": "A",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 46577445.48789424
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "South Korea",
+        "group": "A",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 107521229.19240354
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Czechia",
+        "group": "A",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 57485266.93301565
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Canada",
+        "group": "B",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.002,
+          "volume24h": 0,
+          "totalVolume": 102858402.64237365
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Bosnia and Herzegovina",
+        "group": "B",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 63473942.77971768
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Switzerland",
+        "group": "B",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.016,
+          "volume24h": 0,
+          "totalVolume": 132837715.7947361
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Qatar",
+        "group": "B",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 45097302.84833185
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Brazil",
+        "group": "C",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.064,
+          "volume24h": 0,
+          "totalVolume": 81936874.65550427
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Morocco",
+        "group": "C",
+        "tournament": {
+          "probability": 0,
+          "movement24h": -0.028,
+          "volume24h": 0,
+          "totalVolume": 152254451.3257818
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      },
+      {
+        "team": "Haiti",
+        "group": "C",
+        "tournament": {
+          "probability": 0,
+          "movement24h": null,
+          "volume24h": 0,
+          "totalVolume": 33265926.54182009
+        },
+        "matchAverageProbability": null,
+        "matchSignals": []
+      }
+    ],
+    "movers": [
+      {
+        "team": "Spain",
+        "group": "H",
+        "probability": 1,
+        "movement24h": 0.409
+      },
+      {
+        "team": "Argentina",
+        "group": "J",
+        "probability": 0,
+        "movement24h": -0.409
+      },
+      {
+        "team": "France",
+        "group": "I",
+        "probability": 0,
+        "movement24h": -0.39
+      },
+      {
+        "team": "England",
+        "group": "L",
+        "probability": 0,
+        "movement24h": -0.228
+      },
+      {
+        "team": "Brazil",
+        "group": "C",
+        "probability": 0,
+        "movement24h": -0.064
+      },
+      {
+        "team": "Norway",
+        "group": "I",
+        "probability": 0,
+        "movement24h": -0.059
+      },
+      {
+        "team": "Portugal",
+        "group": "K",
+        "probability": 0,
+        "movement24h": -0.058
+      },
+      {
+        "team": "Netherlands",
+        "group": "F",
+        "probability": 0,
+        "movement24h": -0.05
+      },
+      {
+        "team": "Germany",
+        "group": "E",
+        "probability": 0,
+        "movement24h": -0.039
+      },
+      {
+        "team": "Mexico",
+        "group": "A",
+        "probability": 0,
+        "movement24h": -0.034
+      },
+      {
+        "team": "USA",
+        "group": "D",
+        "probability": 0,
+        "movement24h": -0.032
+      },
+      {
+        "team": "Colombia",
+        "group": "K",
+        "probability": 0,
+        "movement24h": -0.032
+      },
+      {
+        "team": "Morocco",
+        "group": "C",
+        "probability": 0,
+        "movement24h": -0.028
+      },
+      {
+        "team": "Belgium",
+        "group": "G",
+        "probability": 0,
+        "movement24h": -0.021
+      },
+      {
+        "team": "Switzerland",
+        "group": "B",
+        "probability": 0,
+        "movement24h": -0.016
+      },
+      {
+        "team": "Japan",
+        "group": "F",
+        "probability": 0,
+        "movement24h": -0.01
+      }
+    ]
+  }
+}
