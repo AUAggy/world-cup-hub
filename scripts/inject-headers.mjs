@@ -10,6 +10,17 @@ const ASSETS_DIR = "dist/client/assets";
 
 const source = readFileSync(ENTRY, "utf8");
 
+// Derive the SSR cache namespace from the build itself: every deploy with
+// content changes gets a fresh cache key, so stale HTML from older
+// versions can never be served. (Bug: a hardcoded key let a stale
+// host-keyed caches.default entry serve old asset references on the apex
+// domain indefinitely.)
+const cssFile = existsSync(ASSETS_DIR)
+  ? readdirSync(ASSETS_DIR).find((file) => file.endsWith(".css"))
+  : null;
+const cacheTag = cssFile ? cssFile.replace(/\.css$/, "").replace(/^styles-/, "") : "unknown";
+const cachePath = `/__ssr/wch-${cacheTag}`;
+
 if (source.includes("var __wch_orig = server_default;")) {
   console.error(
     "Refusing to inject wrapper twice. Rebuild before running inject-headers.mjs again.",
@@ -39,7 +50,7 @@ server_default = { fetch: async function(req, env, ctx) {
     }
     if (url.pathname === "/" && cache && req.method === "GET") {
       var cacheUrl = new URL(req.url);
-      cacheUrl.pathname = "/__ssr/wch-v10";
+      cacheUrl.pathname = "${cachePath}";
       cacheUrl.search = "";
       try {
         var cached = await cache.match(cacheUrl);
@@ -70,7 +81,7 @@ server_default = { fetch: async function(req, env, ctx) {
     var out = new Response(res.body,{status:res.status,statusText:res.statusText,headers:h});
     if (url.pathname === "/" && cache && res.status < 400 && req.method === "GET") {
       var putUrl = new URL(req.url);
-      putUrl.pathname = "/__ssr/wch-v10";
+      putUrl.pathname = "${cachePath}";
       putUrl.search = "";
       var cloned = out.clone();
       cloned.headers.set("cache-control", "public, max-age=1800, s-maxage=1800");
