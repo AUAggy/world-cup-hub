@@ -231,16 +231,15 @@ tech stack, and the "unofficial / not betting advice" disclaimers.
 
 ## Step 8 — Permanent URL, tag, archive
 
-- **URL decision:** `wrangler.jsonc` already maps `nawewe.xyz` +
-  `www.nawewe.xyz` to this worker. Decide and commit:
-  - *Option A (default):* keep `nawewe.xyz` as the permanent archive home —
-    this repo is the site. No config change.
-  - *Option B:* move the archive to `worldcup.nawewe.xyz` and reclaim the
-    apex for something else later. Update `wrangler.jsonc` routes and
-    redeploy.
-- Either way, keep `workers_dev: true` so
+**Decided (2026-07-20): Option A.** `nawewe.xyz` stays as the live
+archive on the apex domain through the next cycle. No `wrangler.jsonc`
+change. In 2030 the owner decides: rebuild for the new tournament, or
+move this archive to `2026.nawewe.xyz` and reclaim the apex. Deferring
+costs nothing; the archive does not care where it lives.
+
+- Keep `workers_dev: true` so
   `world-cup-hub.hello-cloudflare-432.workers.dev` stays live as a free
-  fallback URL. Record the canonical URLs in the README.
+  fallback URL. Canonical URLs recorded in the README.
 - Final deploy: `ARCHIVE_MODE=1 ./scripts/deploy.sh production`.
 - `git tag v1.0-final-tournament && git push --tags`.
 - Archive the GitHub repo (Settings → Archive) once the README is final.
@@ -277,8 +276,9 @@ tech stack, and the "unofficial / not betting advice" disclaimers.
 - [x] **3.** Write `docs/case-study.md` per outline; revamp `README.md`
       (screenshot, GIF, URLs, disclaimers). *(clear-ink editorial pass;
       docs force-added to git so README links resolve on GitHub.)*
-- [ ] **8.** Commit to URL decision (Option A or B); update `wrangler.jsonc`
-      if B; final production deploy.
+- [x] **8.** Commit to URL decision (Option A or B); update `wrangler.jsonc`
+      if B; final production deploy. *(Option A decided: apex stays the
+      live archive; 2030 decision deferred.)*
 - [ ] **8.** `git tag v1.0-final-tournament`; push; archive the GitHub repo.
 - [ ] Optional later: generic tournament-engine extraction
       (assessment option 5) — out of scope for this plan.

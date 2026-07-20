@@ -40,11 +40,8 @@ The archive is baked at build time. `bun run build:archive` sets a flag that mak
 ## Engineering notes
 
 - **Stack:** TanStack Start, React 19, TypeScript, Vite 8, Tailwind CSS 4, Bun, Cloudflare Workers.
-- **Verification:** `bun run verify` runs typecheck, lint, 79 tests, and a production build. The deploy script refuses to run without it.
-- **Headers:** security and cache headers are injected into the built worker by `scripts/inject-headers.mjs`.
-- **Freeze tooling:** `bun run capture:snapshots` (final results and forecast) and `bun run capture:forecast-history` (48 teams of daily price history) write validated JSON into `src/data/frozen/`.
-- **Retrospective:** `bun run build:retrospective` computes the retrospective artifact offline from the frozen data. The UI renders it statically.
-- **Demo capture:** `bun run record:demo` records the archive tour and stills in `docs/media/` via Playwright.
+- **Verification:** `bun run verify` runs typecheck, lint, 79 tests, and a production build. The deploy path refuses to run without it.
+- **Headers:** security and cache headers are injected into the built worker at deploy time, so they cannot drift from the app code.
 
 ## Development
 
@@ -52,12 +49,6 @@ The archive is baked at build time. `bun run build:archive` sets a flag that mak
 bun install --frozen-lockfile
 bun run dev
 bun run verify
-```
-
-## Deploy
-
-```sh
-ARCHIVE_MODE=1 ./scripts/deploy.sh production
 ```
 
 ## Status
