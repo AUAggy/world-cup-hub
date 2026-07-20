@@ -54,7 +54,30 @@ describe("retrospective artifact", () => {
     for (const read of retro.roundEveReads) {
       expect(read.favorite).not.toBeNull();
       expect(read.championProbability).not.toBeNull();
+      expect(read.championRank).not.toBeNull();
+      expect(read.top).toHaveLength(3);
+      expect(read.aliveCount).toBeGreaterThan(0);
     }
+  });
+
+  test("race covers all eight quarterfinalists with labeled markers", () => {
+    expect(retro.race.teams).toHaveLength(8);
+    expect(retro.race.teams.filter((t) => t.isChampion)).toHaveLength(1);
+    for (const team of retro.race.teams) {
+      expect(team.points.length).toBeGreaterThan(0);
+    }
+    expect(retro.race.roundMarkers).toHaveLength(5);
+  });
+
+  test("crowd reads name fates for favorites and the unpriced runs", () => {
+    expect(retro.crowdReads.earlyFavorites.length).toBeGreaterThan(0);
+    expect(retro.crowdReads.unpricedRuns.length).toBeGreaterThan(0);
+    for (const entry of [...retro.crowdReads.earlyFavorites, ...retro.crowdReads.unpricedRuns]) {
+      expect(entry.fate.length).toBeGreaterThan(0);
+      expect(entry.probability).toBeGreaterThanOrEqual(0);
+      expect(entry.probability).toBeLessThanOrEqual(1);
+    }
+    expect(retro.crowdReads.earlyFavorites.some((e) => e.fate === "won the Cup")).toBe(true);
   });
 
   test("both finalists have an eve-of-final read", () => {

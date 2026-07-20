@@ -42,6 +42,8 @@ function match(
   };
 }
 
+const QF1 = match("q1", "quarterfinals", "2026-07-10", "Spain", "Germany", 2, 1, true);
+const QF2 = match("q2", "quarterfinals", "2026-07-10", "France", "Italy", 1, 0, true);
 const SEMI = match("s1", "semifinals", "2026-07-14", "Spain", "France", 2, 0, true);
 const FINAL = match("f1", "final", "2026-07-19", "Spain", "Argentina", 1, 0, true);
 
@@ -49,13 +51,13 @@ const worldcup: WorldCupSnapshot = {
   fetchedAt: "2026-07-20T00:00:00.000Z",
   ttlSeconds: 0,
   source: "espn",
-  matches: [SEMI, FINAL],
+  matches: [QF1, QF2, SEMI, FINAL],
   groups: [],
   rounds: {
     "group-stage": [],
     "round-of-32": [],
     "round-of-16": [],
-    quarterfinals: [],
+    quarterfinals: [QF1, QF2],
     semifinals: [SEMI],
     "3rd-place-match": [],
     final: [FINAL],
@@ -86,6 +88,7 @@ const history: ForecastHistory = {
     {
       team: "Spain",
       points: [
+        { date: "2026-07-01", probability: 0.12 },
         { date: "2026-07-13", probability: 0.2 },
         { date: "2026-07-14", probability: 0.2 },
         // Semifinal win on 07-14 registers at the 07-15 midnight snapshot.
@@ -98,14 +101,30 @@ const history: ForecastHistory = {
     {
       team: "France",
       points: [
+        { date: "2026-07-01", probability: 0.3 },
         { date: "2026-07-13", probability: 0.39 },
         { date: "2026-07-14", probability: 0.39 },
         { date: "2026-07-15", probability: 0.001 },
       ],
     },
     {
+      team: "Germany",
+      points: [
+        { date: "2026-07-01", probability: 0.15 },
+        { date: "2026-07-11", probability: 0.001 },
+      ],
+    },
+    {
+      team: "Italy",
+      points: [
+        { date: "2026-07-01", probability: 0.1 },
+        { date: "2026-07-11", probability: 0.001 },
+      ],
+    },
+    {
       team: "Argentina",
       points: [
+        { date: "2026-07-01", probability: 0.05 },
         { date: "2026-07-18", probability: 0.4 },
         { date: "2026-07-19", probability: 0.4 },
         { date: "2026-07-20", probability: 0 },
@@ -152,6 +171,9 @@ describe("buildRetrospective", () => {
     expect(semi?.eveDate).toBe("2026-07-13");
     expect(semi?.favorite?.team).toBe("France");
     expect(semi?.championProbability).toBe(0.2);
+    expect(semi?.aliveCount).toBe(2);
+    expect(semi?.top).toHaveLength(3);
+    expect(semi?.championRank).toBe(2);
   });
 
   test("eve of final: Spain 59%, Argentina 40%", () => {
@@ -175,6 +197,22 @@ describe("buildRetrospective", () => {
     expect(semiDay?.match?.opponent).toBe("France");
     const quietDay = r.championArc.find((p) => p.date === "2026-07-13");
     expect(quietDay?.match).toBeNull();
+  });
+
+  test("race covers the quarterfinalists with round markers", () => {
+    const names = r.race.teams.map((t) => t.team).sort();
+    expect(names).toEqual(["France", "Germany", "Italy", "Spain"]);
+    expect(r.race.teams.find((t) => t.isChampion)?.team).toBe("Spain");
+    const qfMarker = r.race.roundMarkers.find((m) => m.label === "Quarterfinals");
+    expect(qfMarker?.date).toBe("2026-07-10");
+  });
+
+  test("crowd reads: early favorites carry fates; cheapest semifinalist flagged", () => {
+    expect(r.crowdReads.earlyFavorites[0].team).toBe("France"); // 30% on Jun 1
+    expect(r.crowdReads.earlyFavorites[0].fate).toBe("out in the semifinals");
+    const champion = r.crowdReads.earlyFavorites.find((e) => e.team === "Spain");
+    expect(champion?.fate).toBe("won the Cup");
+    expect(r.crowdReads.unpricedRuns[0].team).toBe("Spain"); // 12%, the cheapest semifinalist
   });
 
   test("resolution movers pass through, capped", () => {

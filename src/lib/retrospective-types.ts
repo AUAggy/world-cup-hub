@@ -41,8 +41,28 @@ export interface RoundEveRead {
   round: string; // RoundSlug
   label: string; // fan-facing, e.g. "Quarterfinals"
   eveDate: string; // last history date before the round kicked off
+  aliveCount: number; // teams still in the tournament for that round
+  top: { team: string; probability: number }[]; // crowd top 3 on the eve
   favorite: { team: string; probability: number } | null;
   championProbability: number | null;
+  championRank: number | null; // 1 = crowd favorite
+}
+
+export interface RaceTeam {
+  team: string;
+  isChampion: boolean;
+  points: HistoryPoint[];
+}
+
+export interface RoundMarker {
+  date: string; // first kickoff of the round
+  label: string;
+}
+
+export interface CrowdReadEntry {
+  team: string;
+  probability: number; // the crowd read on Jun 1, before kickoff
+  fate: string; // fan-facing, e.g. "out in the quarterfinals"
 }
 
 export interface FinalRead {
@@ -71,7 +91,9 @@ export interface Retrospective {
   champion: string;
   finalResult: string;
   championArc: ChampionArcPoint[];
+  race: { teams: RaceTeam[]; roundMarkers: RoundMarker[] };
   roundEveReads: RoundEveRead[];
+  crowdReads: { earlyFavorites: CrowdReadEntry[]; unpricedRuns: CrowdReadEntry[] };
   finalRead: FinalRead;
   biggestSwings: DaySwing[];
   resolutionMovers: ResolutionMover[];

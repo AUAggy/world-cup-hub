@@ -13,12 +13,15 @@ import type { Match, WorldCupSnapshot } from "./worldcup-types";
 import type { ForecastSnapshot } from "./forecast-types";
 import type {
   ChampionArcPoint,
+  CrowdReadEntry,
   DaySwing,
   FinalRead,
   ForecastHistory,
   MatchNote,
+  RaceTeam,
   Retrospective,
   RoundEveRead,
+  RoundMarker,
   TeamHistory,
 } from "./retrospective-types";
 import { utcDateKey } from "./date-format";
@@ -33,6 +36,9 @@ const KNOCKOUT_ROUND_LABELS: Record<string, string> = {
 
 const TOP_SWINGS = 10;
 const TOP_RESOLUTION_MOVERS = 5;
+const TOP_EVE_READS = 3;
+const EARLY_FAVORITES = 5;
+const UNPRICED_RUNS = 2;
 
 /** Latest crowd probability on or before `date` (YYYY-MM-DD), else null. */
 export function probabilityOn(
@@ -108,21 +114,26 @@ function roundEveReads(
 
     const roundStart = matches.map((m) => utcDateKey(m.date)).sort()[0];
     const eve = dayBefore(roundStart);
+    const aliveCount = new Set(matches.flatMap((m) => [m.home.team.name, m.away.team.name])).size;
 
-    let favorite: RoundEveRead["favorite"] = null;
-    for (const team of history.teams) {
+    // Rank every team's eve read; keep the crowd's top 3.
+    const ranked = history.teams.flatMap((team) => {
       const p = probabilityOn(team.points, eve);
-      if (p === null) continue;
-      if (!favorite || p > favorite.probability) favorite = { team: team.team, probability: p };
-    }
+      return p === null ? [] : [{ team: team.team, probability: p }];
+    });
+    ranked.sort((a, b) => b.probability - a.probability);
 
-    const championSeries = history.teams.find((t) => t.team === champion);
+    const championIndex = ranked.findIndex((r) => r.team === champion);
+
     reads.push({
       round,
       label,
       eveDate: eve,
-      favorite,
-      championProbability: championSeries ? probabilityOn(championSeries.points, eve) : null,
+      aliveCount,
+      top: ranked.slice(0, TOP_EVE_READS),
+      favorite: ranked[0] ?? null,
+      championProbability: championIndex >= 0 ? ranked[championIndex].probability : null,
+      championRank: championIndex >= 0 ? championIndex + 1 : null,
     });
   }
 
@@ -142,6 +153,89 @@ function finalRead(final: Match, history: ForecastHistory): FinalRead {
     away: { team: final.away.team.name, probability: prob(final.away.team.name) },
     result: formatFinalResult(final),
   };
+}
+
+/** Where a team's tournament ended, as a fan-facing phrase. */
+export function fateOf(matches: Match[], team: string): string {
+  const played = matches
+    .filter((m) => m.home.team.name === team || m.away.team.name === team)
+    .sort((a, b) => a.date.localeCompare(b.date));
+  const last = played.at(-1);
+  if (!last) return "\u2014";
+
+  switch (last.round) {
+    case "final": {
+      const won = last.home.team.name === team ? last.home.winner : last.away.winner;
+      return won ? "won the Cup" : "lost the final";
+    }
+    case "semifinals":
+    case "3rd-place-match":
+      return "out in the semifinals";
+    case "quarterfinals":
+      return "out in the quarterfinals";
+    case "round-of-16":
+      return "out in the Round of 16";
+    case "round-of-32":
+      return "out in the Round of 32";
+    default:
+      return "out in the group stage";
+  }
+}
+
+/** The quarterfinalists' daily reads, ending as each market resolved. */
+function race(worldcup: WorldCupSnapshot, history: ForecastHistory, champion: string) {
+  const quarterfinalists = [
+    ...new Set(
+      worldcup.rounds["quarterfinals"].flatMap((m) => [m.home.team.name, m.away.team.name]),
+    ),
+  ];
+
+  const teams: RaceTeam[] = quarterfinalists.flatMap((team) => {
+    const series = history.teams.find((t) => t.team === team);
+    return series ? [{ team, isChampion: team === champion, points: series.points }] : [];
+  });
+
+  const roundMarkers: RoundMarker[] = Object.entries(KNOCKOUT_ROUND_LABELS).flatMap(
+    ([round, label]) => {
+      const matches = worldcup.rounds[round as keyof typeof worldcup.rounds] ?? [];
+      if (matches.length === 0) return [];
+      return [{ date: matches.map((m) => utcDateKey(m.date)).sort()[0], label }];
+    },
+  );
+
+  return { teams, roundMarkers };
+}
+
+/** Jun-1 reads vs. fates: who the crowd overpaid for, and who it missed. */
+function crowdReads(
+  worldcup: WorldCupSnapshot,
+  history: ForecastHistory,
+): Retrospective["crowdReads"] {
+  const startDate = history.windowStart.slice(0, 10);
+  const preReads = history.teams.flatMap((team) => {
+    const p = probabilityOn(team.points, startDate);
+    return p === null ? [] : [{ team: team.team, probability: p }];
+  });
+  preReads.sort((a, b) => b.probability - a.probability);
+
+  const fate = (team: string) => fateOf(worldcup.matches, team);
+
+  const earlyFavorites: CrowdReadEntry[] = preReads
+    .slice(0, EARLY_FAVORITES)
+    .map((r) => ({ ...r, fate: fate(r.team) }));
+
+  const semifinalists = [
+    ...new Set(worldcup.rounds["semifinals"].flatMap((m) => [m.home.team.name, m.away.team.name])),
+  ];
+  const unpricedRuns: CrowdReadEntry[] = semifinalists
+    .flatMap((team) => {
+      const pre = preReads.find((r) => r.team === team);
+      return pre ? [{ ...pre, fate: fate(team) }] : [];
+    })
+    .sort((a, b) => a.probability - b.probability)
+    .slice(0, UNPRICED_RUNS);
+
+  return { earlyFavorites, unpricedRuns };
 }
 
 function biggestSwings(history: ForecastHistory, matches: Match[]): DaySwing[] {
@@ -188,7 +282,9 @@ export function buildRetrospective(input: {
     champion,
     finalResult: formatFinalResult(final),
     championArc: championArc(champion, championSeries, worldcup.matches),
+    race: race(worldcup, history, champion),
     roundEveReads: roundEveReads(worldcup, history, champion),
+    crowdReads: crowdReads(worldcup, history),
     finalRead: finalRead(final, history),
     biggestSwings: biggestSwings(history, worldcup.matches),
     resolutionMovers: forecast.movers
