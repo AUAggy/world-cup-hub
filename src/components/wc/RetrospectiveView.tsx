@@ -18,9 +18,20 @@ const retro = retrospectiveJson as Retrospective;
 
 // Theme colors as CSS vars (Tailwind v4 exposes theme colors this way).
 const TERRACOTTA = "var(--color-terracotta)";
-const INK = "var(--color-ink)";
 const INK_SOFT = "var(--color-ink-soft)";
 const BORDER = "var(--color-border)";
+
+// Muted, distinguishable hues for the seven non-champion lines. Spain keeps
+// terracotta; these stay quiet so the champion still dominates the chart.
+const TEAM_PALETTE = [
+  "#7c8db0", // slate blue
+  "#a08c5b", // khaki
+  "#6d9e8a", // sage
+  "#9b7fa6", // muted purple
+  "#b0786f", // dusty rose
+  "#5f8fa8", // steel blue
+  "#8a8f6a", // moss
+];
 
 function pct(p: number | null): string {
   return p === null ? "–" : `${Math.round(p * 100)}%`;
@@ -94,6 +105,7 @@ function ms(date: string): number {
 /** Line-end labels, spread vertically so none overlap (min gap, plot-bounded). */
 function endLabels(
   teams: Retrospective["race"]["teams"],
+  colors: Map<string, string>,
   x: (date: string) => number,
   y: (p: number) => number,
 ) {
@@ -104,6 +116,7 @@ function endLabels(
       return {
         team: team.team,
         isChampion: team.isChampion,
+        color: colors.get(team.team) ?? INK_SOFT,
         endX: x(last.date),
         endY: y(last.probability),
         labelY: y(last.probability),
@@ -138,6 +151,12 @@ function RaceChart() {
   const y = (p: number) => MARGIN.top + (1 - p) * PLOT_H;
 
   const championMatchDays = new Set(retro.championArc.filter((p) => p.match).map((p) => p.date));
+  const colors = new Map(
+    retro.race.teams.map((team, i) => [
+      team.team,
+      team.isChampion ? TERRACOTTA : TEAM_PALETTE[i % TEAM_PALETTE.length],
+    ]),
+  );
 
   return (
     <section className="rounded-xl border border-border bg-card px-4 py-5">
@@ -215,9 +234,9 @@ function RaceChart() {
               <path
                 d={d}
                 fill="none"
-                stroke={team.isChampion ? TERRACOTTA : INK}
+                stroke={colors.get(team.team)}
                 strokeWidth={team.isChampion ? 2.5 : 1.25}
-                opacity={team.isChampion ? 1 : 0.35}
+                opacity={team.isChampion ? 1 : 0.65}
               />
               {/* match-day dots on the champion's line */}
               {team.isChampion &&
@@ -239,7 +258,7 @@ function RaceChart() {
         })}
 
         {/* End labels: de-collided vertically, leader tick when displaced */}
-        {endLabels(retro.race.teams, x, y).map((label) => (
+        {endLabels(retro.race.teams, colors, x, y).map((label) => (
           <g key={label.team}>
             {Math.abs(label.labelY - label.endY) > 3 && (
               <line
@@ -257,7 +276,7 @@ function RaceChart() {
               y={label.labelY + 4}
               fontSize={11}
               fontWeight={label.isChampion ? 700 : 400}
-              fill={label.isChampion ? TERRACOTTA : INK_SOFT}
+              fill={label.color}
             >
               {label.team}
             </text>
