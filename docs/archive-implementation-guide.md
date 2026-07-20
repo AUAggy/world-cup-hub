@@ -274,8 +274,9 @@ tech stack, and the "unofficial / not betting advice" disclaimers.
       into `docs/media/`. *(Automated: `scripts/record-demo.ts` +
       ffmpeg. 59s tour, 12s GIF at 2.6MB, five stills. Guide:
       `docs/recording-guide.md`.)*
-- [ ] **3.** Write `docs/case-study.md` per outline; revamp `README.md`
-      (screenshot, GIF, URLs, disclaimers).
+- [x] **3.** Write `docs/case-study.md` per outline; revamp `README.md`
+      (screenshot, GIF, URLs, disclaimers). *(clear-ink editorial pass;
+      docs force-added to git so README links resolve on GitHub.)*
 - [ ] **8.** Commit to URL decision (Option A or B); update `wrangler.jsonc`
       if B; final production deploy.
 - [ ] **8.** `git tag v1.0-final-tournament`; push; archive the GitHub repo.
