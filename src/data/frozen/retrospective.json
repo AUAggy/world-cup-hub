@@ -1,0 +1,506 @@
+{
+  "champion": "Spain",
+  "finalResult": "Spain 1–0 Argentina (AET)",
+  "championArc": [
+    {
+      "date": "2026-06-01",
+      "probability": 0.1695,
+      "match": null
+    },
+    {
+      "date": "2026-06-02",
+      "probability": 0.1675,
+      "match": null
+    },
+    {
+      "date": "2026-06-03",
+      "probability": 0.1635,
+      "match": null
+    },
+    {
+      "date": "2026-06-04",
+      "probability": 0.1595,
+      "match": null
+    },
+    {
+      "date": "2026-06-05",
+      "probability": 0.1595,
+      "match": null
+    },
+    {
+      "date": "2026-06-06",
+      "probability": 0.1595,
+      "match": null
+    },
+    {
+      "date": "2026-06-07",
+      "probability": 0.1615,
+      "match": null
+    },
+    {
+      "date": "2026-06-08",
+      "probability": 0.1615,
+      "match": null
+    },
+    {
+      "date": "2026-06-09",
+      "probability": 0.1595,
+      "match": null
+    },
+    {
+      "date": "2026-06-10",
+      "probability": 0.1605,
+      "match": null
+    },
+    {
+      "date": "2026-06-11",
+      "probability": 0.1645,
+      "match": null
+    },
+    {
+      "date": "2026-06-12",
+      "probability": 0.1695,
+      "match": null
+    },
+    {
+      "date": "2026-06-13",
+      "probability": 0.1685,
+      "match": null
+    },
+    {
+      "date": "2026-06-14",
+      "probability": 0.1655,
+      "match": null
+    },
+    {
+      "date": "2026-06-15",
+      "probability": 0.1625,
+      "match": {
+        "opponent": "Cape Verde",
+        "result": "D",
+        "score": "0–0"
+      }
+    },
+    {
+      "date": "2026-06-16",
+      "probability": 0.1465,
+      "match": null
+    },
+    {
+      "date": "2026-06-17",
+      "probability": 0.1325,
+      "match": null
+    },
+    {
+      "date": "2026-06-18",
+      "probability": 0.1375,
+      "match": null
+    },
+    {
+      "date": "2026-06-19",
+      "probability": 0.1365,
+      "match": null
+    },
+    {
+      "date": "2026-06-20",
+      "probability": 0.1365,
+      "match": null
+    },
+    {
+      "date": "2026-06-21",
+      "probability": 0.1365,
+      "match": {
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "score": "4–0"
+      }
+    },
+    {
+      "date": "2026-06-22",
+      "probability": 0.1385,
+      "match": null
+    },
+    {
+      "date": "2026-06-23",
+      "probability": 0.1385,
+      "match": null
+    },
+    {
+      "date": "2026-06-24",
+      "probability": 0.1385,
+      "match": null
+    },
+    {
+      "date": "2026-06-25",
+      "probability": 0.1385,
+      "match": null
+    },
+    {
+      "date": "2026-06-26",
+      "probability": 0.1385,
+      "match": null
+    },
+    {
+      "date": "2026-06-27",
+      "probability": 0.1355,
+      "match": {
+        "opponent": "Uruguay",
+        "result": "W",
+        "score": "0–1"
+      }
+    },
+    {
+      "date": "2026-06-28",
+      "probability": 0.1135,
+      "match": null
+    },
+    {
+      "date": "2026-06-29",
+      "probability": 0.1115,
+      "match": null
+    },
+    {
+      "date": "2026-06-30",
+      "probability": 0.1135,
+      "match": null
+    },
+    {
+      "date": "2026-07-01",
+      "probability": 0.1065,
+      "match": null
+    },
+    {
+      "date": "2026-07-02",
+      "probability": 0.1025,
+      "match": {
+        "opponent": "Austria",
+        "result": "W",
+        "score": "3–0"
+      }
+    },
+    {
+      "date": "2026-07-03",
+      "probability": 0.1285,
+      "match": null
+    },
+    {
+      "date": "2026-07-04",
+      "probability": 0.1285,
+      "match": null
+    },
+    {
+      "date": "2026-07-05",
+      "probability": 0.1255,
+      "match": null
+    },
+    {
+      "date": "2026-07-06",
+      "probability": 0.1265,
+      "match": {
+        "opponent": "Portugal",
+        "result": "W",
+        "score": "0–1"
+      }
+    },
+    {
+      "date": "2026-07-07",
+      "probability": 0.1835,
+      "match": null
+    },
+    {
+      "date": "2026-07-08",
+      "probability": 0.1855,
+      "match": null
+    },
+    {
+      "date": "2026-07-09",
+      "probability": 0.1875,
+      "match": null
+    },
+    {
+      "date": "2026-07-10",
+      "probability": 0.1745,
+      "match": {
+        "opponent": "Belgium",
+        "result": "W",
+        "score": "2–1"
+      }
+    },
+    {
+      "date": "2026-07-11",
+      "probability": 0.2105,
+      "match": null
+    },
+    {
+      "date": "2026-07-12",
+      "probability": 0.2065,
+      "match": null
+    },
+    {
+      "date": "2026-07-13",
+      "probability": 0.2055,
+      "match": null
+    },
+    {
+      "date": "2026-07-14",
+      "probability": 0.2125,
+      "match": {
+        "opponent": "France",
+        "result": "W",
+        "score": "0–2"
+      }
+    },
+    {
+      "date": "2026-07-15",
+      "probability": 0.5815,
+      "match": null
+    },
+    {
+      "date": "2026-07-16",
+      "probability": 0.5795,
+      "match": null
+    },
+    {
+      "date": "2026-07-17",
+      "probability": 0.5835,
+      "match": null
+    },
+    {
+      "date": "2026-07-18",
+      "probability": 0.5915,
+      "match": null
+    },
+    {
+      "date": "2026-07-19",
+      "probability": 0.5905,
+      "match": {
+        "opponent": "Argentina",
+        "result": "W",
+        "score": "1–0"
+      }
+    },
+    {
+      "date": "2026-07-20",
+      "probability": 0.9995,
+      "match": null
+    }
+  ],
+  "roundEveReads": [
+    {
+      "round": "round-of-32",
+      "label": "Round of 32",
+      "eveDate": "2026-06-27",
+      "favorite": {
+        "team": "France",
+        "probability": 0.2165
+      },
+      "championProbability": 0.1355
+    },
+    {
+      "round": "round-of-16",
+      "label": "Round of 16",
+      "eveDate": "2026-07-03",
+      "favorite": {
+        "team": "France",
+        "probability": 0.3425
+      },
+      "championProbability": 0.1285
+    },
+    {
+      "round": "quarterfinals",
+      "label": "Quarterfinals",
+      "eveDate": "2026-07-08",
+      "favorite": {
+        "team": "France",
+        "probability": 0.3305
+      },
+      "championProbability": 0.1855
+    },
+    {
+      "round": "semifinals",
+      "label": "Semifinals",
+      "eveDate": "2026-07-13",
+      "favorite": {
+        "team": "France",
+        "probability": 0.3885
+      },
+      "championProbability": 0.2055
+    },
+    {
+      "round": "final",
+      "label": "Final",
+      "eveDate": "2026-07-18",
+      "favorite": {
+        "team": "Spain",
+        "probability": 0.5915
+      },
+      "championProbability": 0.5915
+    }
+  ],
+  "finalRead": {
+    "kickoffDate": "2026-07-19",
+    "home": {
+      "team": "Spain",
+      "probability": 0.5915
+    },
+    "away": {
+      "team": "Argentina",
+      "probability": 0.4055
+    },
+    "result": "Spain 1–0 Argentina (AET)"
+  },
+  "biggestSwings": [
+    {
+      "team": "Spain",
+      "date": "2026-07-20",
+      "from": 0.5905,
+      "to": 0.9995,
+      "delta": 0.40900000000000003,
+      "match": {
+        "opponent": "Argentina",
+        "result": "W",
+        "score": "1–0"
+      }
+    },
+    {
+      "team": "Argentina",
+      "date": "2026-07-20",
+      "from": 0.4095,
+      "to": 0.0005,
+      "delta": -0.409,
+      "match": {
+        "opponent": "Spain",
+        "result": "L",
+        "score": "1–0"
+      }
+    },
+    {
+      "team": "France",
+      "date": "2026-07-15",
+      "from": 0.3895,
+      "to": 0.0005,
+      "delta": -0.389,
+      "match": {
+        "opponent": "Spain",
+        "result": "L",
+        "score": "0–2"
+      }
+    },
+    {
+      "team": "Spain",
+      "date": "2026-07-15",
+      "from": 0.2125,
+      "to": 0.5815,
+      "delta": 0.369,
+      "match": {
+        "opponent": "France",
+        "result": "W",
+        "score": "0–2"
+      }
+    },
+    {
+      "team": "Argentina",
+      "date": "2026-07-16",
+      "from": 0.1925,
+      "to": 0.4215,
+      "delta": 0.22899999999999998,
+      "match": {
+        "opponent": "England",
+        "result": "W",
+        "score": "1–2"
+      }
+    },
+    {
+      "team": "England",
+      "date": "2026-07-16",
+      "from": 0.2285,
+      "to": 0.0005,
+      "delta": -0.228,
+      "match": {
+        "opponent": "Argentina",
+        "result": "L",
+        "score": "1–2"
+      }
+    },
+    {
+      "team": "France",
+      "date": "2026-07-01",
+      "from": 0.2605,
+      "to": 0.3285,
+      "delta": 0.068,
+      "match": {
+        "opponent": "Sweden",
+        "result": "W",
+        "score": "3–0"
+      }
+    },
+    {
+      "team": "Brazil",
+      "date": "2026-07-06",
+      "from": 0.0645,
+      "to": 0.0005,
+      "delta": -0.064,
+      "match": {
+        "opponent": "Norway",
+        "result": "L",
+        "score": "1–2"
+      }
+    },
+    {
+      "team": "England",
+      "date": "2026-07-07",
+      "from": 0.0835,
+      "to": 0.1465,
+      "delta": 0.06299999999999999,
+      "match": {
+        "opponent": "Mexico",
+        "result": "W",
+        "score": "2–3"
+      }
+    },
+    {
+      "team": "France",
+      "date": "2026-07-10",
+      "from": 0.3255,
+      "to": 0.3875,
+      "delta": 0.062,
+      "match": {
+        "opponent": "Morocco",
+        "result": "W",
+        "score": "2–0"
+      }
+    }
+  ],
+  "resolutionMovers": [
+    {
+      "team": "Spain",
+      "movement24h": 0.409,
+      "probability": 1
+    },
+    {
+      "team": "Argentina",
+      "movement24h": -0.409,
+      "probability": 0
+    },
+    {
+      "team": "France",
+      "movement24h": -0.39,
+      "probability": 0
+    },
+    {
+      "team": "England",
+      "movement24h": -0.228,
+      "probability": 0
+    },
+    {
+      "team": "Brazil",
+      "movement24h": -0.064,
+      "probability": 0
+    }
+  ],
+  "source": {
+    "historyCapturedAt": "2026-07-20T02:16:12.559Z",
+    "teamsWithHistory": 48,
+    "matchesAnalyzed": 104
+  }
+}

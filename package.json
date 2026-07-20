@@ -16,6 +16,8 @@
     "preview": "vite preview",
     "test": "bun test",
     "capture:snapshots": "tsx scripts/capture-snapshots.ts",
+    "capture:forecast-history": "tsx scripts/capture-forecast-history.ts",
+    "build:retrospective": "tsx scripts/build-retrospective.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "verify": "bun run typecheck && bun run lint && bun run test && bun run build",

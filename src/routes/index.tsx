@@ -13,6 +13,7 @@ import { CrowdForecastView } from "@/components/wc/CrowdForecastView";
 import { GroupsView } from "@/components/wc/GroupsView";
 import { MatchesView } from "@/components/wc/MatchesView";
 import { MatchCard } from "@/components/wc/MatchCard";
+import { RetrospectiveView } from "@/components/wc/RetrospectiveView";
 
 const CLIENT_REFRESH_MS = 30 * 60 * 1000;
 const FORECAST_REFRESH_MS = 5 * 60 * 1000;
@@ -149,7 +150,9 @@ function pickCurrentKnockoutRound(
 
 function Dashboard() {
   const { data } = useSuspenseQuery(worldCupQuery);
-  const [tab, setTab] = useState<"bracket" | "groups" | "matches" | "forecast">("bracket");
+  const [tab, setTab] = useState<"bracket" | "groups" | "matches" | "forecast" | "reality">(
+    "bracket",
+  );
   const forecastQuery = useQuery({
     ...forecastQueryOptions,
     enabled: tab === "forecast",
@@ -251,6 +254,12 @@ function Dashboard() {
               >
                 Crowd Forecast
               </TabsTrigger>
+              <TabsTrigger
+                value="reality"
+                className="rounded-full px-5 data-[state=active]:bg-ink data-[state=active]:text-paper"
+              >
+                Forecast vs. Reality
+              </TabsTrigger>
               {knockoutPhase && (
                 <TabsTrigger
                   value="groups"
@@ -287,6 +296,9 @@ function Dashboard() {
           </TabsContent>
           <TabsContent value="forecast" className="mt-6">
             <CrowdForecastView query={forecastQuery} />
+          </TabsContent>
+          <TabsContent value="reality" className="mt-6">
+            <RetrospectiveView />
           </TabsContent>
         </Tabs>
 

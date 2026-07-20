@@ -1,0 +1,6475 @@
+{
+  "capturedAt": "2026-07-20T02:16:12.559Z",
+  "note": "Forecast price history archive",
+  "snapshot": {
+    "windowStart": "2026-06-01T00:00:00.000Z",
+    "windowEnd": "2026-07-20T02:16:12.557Z",
+    "fidelityMinutes": 1440,
+    "teams": [
+      {
+        "team": "Algeria",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Argentina",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0895
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0895
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0875
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0895
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0885
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0885
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0885
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0885
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0845
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0875
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0855
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0885
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0785
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0785
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0795
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0845
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.1015
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.1155
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.1175
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.1175
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.1175
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.1175
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.1315
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.1465
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.1515
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.1445
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.1485
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.1795
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.2065
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.1955
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.1905
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.1815
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.1875
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.129
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.1645
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.1745
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.1705
+          },
+          {
+            "date": "2026-07-08",
+            "probability": 0.185
+          },
+          {
+            "date": "2026-07-09",
+            "probability": 0.2005
+          },
+          {
+            "date": "2026-07-10",
+            "probability": 0.1785
+          },
+          {
+            "date": "2026-07-11",
+            "probability": 0.1825
+          },
+          {
+            "date": "2026-07-12",
+            "probability": 0.168
+          },
+          {
+            "date": "2026-07-13",
+            "probability": 0.1825
+          },
+          {
+            "date": "2026-07-14",
+            "probability": 0.1745
+          },
+          {
+            "date": "2026-07-15",
+            "probability": 0.1925
+          },
+          {
+            "date": "2026-07-16",
+            "probability": 0.4215
+          },
+          {
+            "date": "2026-07-17",
+            "probability": 0.4155
+          },
+          {
+            "date": "2026-07-18",
+            "probability": 0.4055
+          },
+          {
+            "date": "2026-07-19",
+            "probability": 0.4095
+          },
+          {
+            "date": "2026-07-20",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Australia",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Austria",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Belgium",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0225
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0225
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-07-08",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-07-09",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-07-10",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-07-11",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Bosnia and Herzegovina",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Brazil",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0865
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0855
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0835
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0825
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0835
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0825
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0825
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0835
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0835
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0845
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0845
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0865
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0835
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0785
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0675
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0665
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0665
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0665
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0665
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0665
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0595
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0575
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0555
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0525
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0575
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0565
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0565
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0565
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0595
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0705
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0705
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0645
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0655
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.07
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0645
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Canada",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0025
+          }
+        ]
+      },
+      {
+        "team": "Cape Verde",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0035
+          }
+        ]
+      },
+      {
+        "team": "Colombia",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0185
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0185
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0265
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0275
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0285
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0315
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0335
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.0325
+          },
+          {
+            "date": "2026-07-08",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Congo DR",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Croatia",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0035
+          }
+        ]
+      },
+      {
+        "team": "Curacao",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Czechia",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Ecuador",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0075
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.006
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0045
+          }
+        ]
+      },
+      {
+        "team": "Egypt",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.0035
+          }
+        ]
+      },
+      {
+        "team": "England",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.1115
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.1115
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.1115
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.1145
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.1145
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.1125
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.1115
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.1105
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.1095
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.1055
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.1085
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.1055
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0965
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0965
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0965
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.1055
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.1045
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.1285
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.1285
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.1255
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.1255
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.1255
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.1255
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.1095
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.1055
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.1055
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.1025
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0995
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.1025
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.1005
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0975
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0815
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0765
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0775
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0685
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0835
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.1465
+          },
+          {
+            "date": "2026-07-08",
+            "probability": 0.1585
+          },
+          {
+            "date": "2026-07-09",
+            "probability": 0.1585
+          },
+          {
+            "date": "2026-07-10",
+            "probability": 0.1595
+          },
+          {
+            "date": "2026-07-11",
+            "probability": 0.1495
+          },
+          {
+            "date": "2026-07-12",
+            "probability": 0.2075
+          },
+          {
+            "date": "2026-07-13",
+            "probability": 0.2145
+          },
+          {
+            "date": "2026-07-14",
+            "probability": 0.2225
+          },
+          {
+            "date": "2026-07-15",
+            "probability": 0.2285
+          },
+          {
+            "date": "2026-07-16",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "France",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.1705
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.1705
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.1705
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.1705
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.1645
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.1595
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.1615
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.1615
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.1615
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.1605
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.1605
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.1605
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.1605
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.1605
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.1605
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.1715
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.1805
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.1845
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.1845
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.1845
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.1975
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.1975
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.1975
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.1915
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.1935
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.1855
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.2165
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.2365
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.2295
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.2605
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.3285
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.3545
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.3425
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.356
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.3605
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.3385
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.3285
+          },
+          {
+            "date": "2026-07-08",
+            "probability": 0.3305
+          },
+          {
+            "date": "2026-07-09",
+            "probability": 0.3255
+          },
+          {
+            "date": "2026-07-10",
+            "probability": 0.3875
+          },
+          {
+            "date": "2026-07-11",
+            "probability": 0.3735
+          },
+          {
+            "date": "2026-07-12",
+            "probability": 0.3845
+          },
+          {
+            "date": "2026-07-13",
+            "probability": 0.3885
+          },
+          {
+            "date": "2026-07-14",
+            "probability": 0.3895
+          },
+          {
+            "date": "2026-07-15",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Germany",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0545
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0555
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0555
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0555
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0535
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0535
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0565
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0545
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0535
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0525
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0525
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0515
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0515
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0515
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0605
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0635
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0585
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0565
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0585
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0605
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0565
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0535
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0565
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0535
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0535
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0445
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0455
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0385
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Ghana",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Haiti",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Iran",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Iraq",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Ivory Coast",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0025
+          }
+        ]
+      },
+      {
+        "team": "Japan",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0185
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0185
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0185
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0185
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0105
+          }
+        ]
+      },
+      {
+        "team": "Jordan",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Mexico",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.018
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0305
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0325
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0345
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0345
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0415
+          }
+        ]
+      },
+      {
+        "team": "Morocco",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0185
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0335
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0225
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0225
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0155
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0315
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0285
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.0275
+          },
+          {
+            "date": "2026-07-08",
+            "probability": 0.0295
+          },
+          {
+            "date": "2026-07-09",
+            "probability": 0.0295
+          },
+          {
+            "date": "2026-07-10",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Netherlands",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0365
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0365
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0405
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0435
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.048
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0485
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0515
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0445
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0455
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0395
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0545
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0545
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0535
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.05
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0535
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0585
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0575
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0475
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0505
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0435
+          }
+        ]
+      },
+      {
+        "team": "New Zealand",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Norway",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0265
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0275
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0275
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0265
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0265
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0245
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0305
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0315
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0315
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0225
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0185
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0175
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0545
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.0485
+          },
+          {
+            "date": "2026-07-08",
+            "probability": 0.0605
+          },
+          {
+            "date": "2026-07-09",
+            "probability": 0.0595
+          },
+          {
+            "date": "2026-07-10",
+            "probability": 0.0585
+          },
+          {
+            "date": "2026-07-11",
+            "probability": 0.0605
+          },
+          {
+            "date": "2026-07-12",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Panama",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Paraguay",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Portugal",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0935
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0935
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0955
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0955
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0935
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0965
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.1005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0965
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0985
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.1015
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.1055
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.1085
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.1055
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.1055
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.1105
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.1075
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.1005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0775
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0775
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0735
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0715
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0665
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0675
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0805
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0785
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0805
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0765
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0825
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0575
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0635
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0525
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0575
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0575
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0615
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0605
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0585
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Qatar",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Saudi Arabia",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Scotland",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Senegal",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0075
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "South Africa",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "South Korea",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Spain",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.1695
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.1675
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.1635
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.1595
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.1595
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.1595
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.1615
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.1615
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.1595
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.1605
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.1645
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.1695
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.1685
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.1655
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.1625
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.1465
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.1325
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.1375
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.1365
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.1365
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.1365
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.1385
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.1385
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.1385
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.1385
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.1385
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.1355
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.1135
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.1115
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.1135
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.1065
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.1025
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.1285
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.1285
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.1255
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.1265
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.1835
+          },
+          {
+            "date": "2026-07-08",
+            "probability": 0.1855
+          },
+          {
+            "date": "2026-07-09",
+            "probability": 0.1875
+          },
+          {
+            "date": "2026-07-10",
+            "probability": 0.1745
+          },
+          {
+            "date": "2026-07-11",
+            "probability": 0.2105
+          },
+          {
+            "date": "2026-07-12",
+            "probability": 0.2065
+          },
+          {
+            "date": "2026-07-13",
+            "probability": 0.2055
+          },
+          {
+            "date": "2026-07-14",
+            "probability": 0.2125
+          },
+          {
+            "date": "2026-07-15",
+            "probability": 0.5815
+          },
+          {
+            "date": "2026-07-16",
+            "probability": 0.5795
+          },
+          {
+            "date": "2026-07-17",
+            "probability": 0.5835
+          },
+          {
+            "date": "2026-07-18",
+            "probability": 0.5915
+          },
+          {
+            "date": "2026-07-19",
+            "probability": 0.5905
+          },
+          {
+            "date": "2026-07-20",
+            "probability": 0.9995
+          }
+        ]
+      },
+      {
+        "team": "Sweden",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0035
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0025
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Switzerland",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0075
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-07-08",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-07-09",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-07-10",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-07-11",
+            "probability": 0.0165
+          },
+          {
+            "date": "2026-07-12",
+            "probability": 0.0155
+          }
+        ]
+      },
+      {
+        "team": "Tunisia",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          }
+        ]
+      },
+      {
+        "team": "Turkey",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.013
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0145
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0125
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0135
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0045
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0045
+          }
+        ]
+      },
+      {
+        "team": "Uruguay",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0105
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0085
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0095
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0065
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0055
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0015
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0025
+          }
+        ]
+      },
+      {
+        "team": "USA",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0115
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0195
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0205
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0215
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0225
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0225
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.034
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0345
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0375
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0355
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0345
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0345
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0295
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0275
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0225
+          },
+          {
+            "date": "2026-06-29",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-06-30",
+            "probability": 0.0225
+          },
+          {
+            "date": "2026-07-01",
+            "probability": 0.0305
+          },
+          {
+            "date": "2026-07-02",
+            "probability": 0.0295
+          },
+          {
+            "date": "2026-07-03",
+            "probability": 0.0265
+          },
+          {
+            "date": "2026-07-04",
+            "probability": 0.0255
+          },
+          {
+            "date": "2026-07-05",
+            "probability": 0.0235
+          },
+          {
+            "date": "2026-07-06",
+            "probability": 0.0325
+          },
+          {
+            "date": "2026-07-07",
+            "probability": 0.0295
+          }
+        ]
+      },
+      {
+        "team": "Uzbekistan",
+        "points": [
+          {
+            "date": "2026-06-01",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-02",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-03",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-04",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-05",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-06",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-07",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-08",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-09",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-10",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-11",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-12",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-13",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-14",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-15",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-16",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-17",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-18",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-19",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-20",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-21",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-22",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-23",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-24",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-25",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-26",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-27",
+            "probability": 0.0005
+          },
+          {
+            "date": "2026-06-28",
+            "probability": 0.0005
+          }
+        ]
+      }
+    ]
+  }
+}
