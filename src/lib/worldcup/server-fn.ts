@@ -6,6 +6,8 @@
 
 import { createServerFn } from "@tanstack/react-start";
 import type { Match, WorldCupSnapshot } from "../worldcup-types";
+import { ARCHIVE_MODE } from "../archive-mode";
+import { frozenWorldCupSnapshot } from "../frozen";
 import { fetchEspnRange } from "./espn-fetch";
 import { eventsFromPayload, isValidEspnResponse } from "./espn-schema";
 import { toMatches } from "./transform";
@@ -18,6 +20,8 @@ let inflight: Promise<WorldCupSnapshot> | null = null;
 
 export const getWorldCup = createServerFn({ method: "GET" }).handler(
   async (): Promise<WorldCupSnapshot> => {
+    if (ARCHIVE_MODE) return frozenWorldCupSnapshot;
+
     const cached = getCachedSnapshot();
     if (cached) return cached;
 

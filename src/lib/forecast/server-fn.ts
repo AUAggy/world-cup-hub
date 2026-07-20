@@ -1,5 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import type { ForecastSnapshot, ForecastSourceStatus } from "../forecast-types";
+import { ARCHIVE_MODE } from "../archive-mode";
+import { frozenForecastSnapshot } from "../frozen";
 import { getCached, setCached } from "./cache";
 import { fetchPolymarketEvent, fetchPolymarketMatchEvents } from "./polymarket-fetch";
 import type { PolymarketEvent } from "./schema";
@@ -21,6 +23,8 @@ let inflight: Promise<ForecastSnapshot> | null = null;
 
 export const getForecast = createServerFn({ method: "GET" }).handler(
   async (): Promise<ForecastSnapshot> => {
+    if (ARCHIVE_MODE) return frozenForecastSnapshot;
+
     const cached = getCached<ForecastSnapshot>(SNAPSHOT_CACHE_KEY);
     if (cached) return cached;
 

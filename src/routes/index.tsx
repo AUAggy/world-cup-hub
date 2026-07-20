@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { queryOptions, useQuery, useSuspenseQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { formatSnapshotDateTime } from "@/lib/date-format";
+import { ARCHIVE_CAPTURED_AT, ARCHIVE_MODE } from "@/lib/archive-mode";
 import { getForecast } from "@/lib/forecast.functions";
 import { getWorldCup } from "@/lib/worldcup.functions";
 import type { ForecastSnapshot } from "@/lib/forecast-types";
@@ -293,6 +294,9 @@ function Dashboard() {
 
         <footer className="mt-6 pt-6 border-t border-border text-xs text-ink-soft flex flex-wrap justify-between gap-2">
           <p>Unofficial World Cup fan dashboard. Not affiliated with FIFA, ESPN, or Polymarket.</p>
+          {ARCHIVE_MODE ? (
+            <p>Final archive — data frozen as of {formatSnapshotDateTime(ARCHIVE_CAPTURED_AT)}.</p>
+          ) : null}
           <p>
             Made by{" "}
             <a
